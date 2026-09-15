@@ -1,0 +1,501 @@
+\section{The sharp support--margin law at fixed count budget}
+\label{sec:frontier}
+
+Fix \(a>0\), \(C\ge2\), and \(m\ge0\). For
+\(0<\beta\le\min(a,1)\), let \(\mathcal Z(C,\beta;a,m)\)
+be the class of divisors satisfying \eqref{eq:divisor}, containing
+\(\beta\) and \(-\beta\), and obeying
+\(N_0(Y)\le C(1+Y)^m\) for every \(Y\ge0\). Define
+\[
+ \cR_\eta(C,\beta;a,m)=\sup_{Z\in\mathcal Z(C,\beta;a,m)}r_Z(\eta).
+\]
+Other off-axis pairs are unrestricted except for the strip, reflection,
+and count. The divisor, not only the test, varies in this supremum.
+
+Put \(M=\lfloor C\rfloor\), \(p=2M-1\). The uniform conclusion is
+\begin{equation}\label{frontier:statement}
+ \cR_\eta(C,\beta;a,m)
+ \asymp_{a,C,m}
+ \beta^{-1}\log\bigl(1+(\beta\eta)^{1/p}\bigr),
+ \qquad \eta\ge1,\quad0<\beta\le\min(a,1).
+\end{equation}
+Both comparison constants are positive and finite. They are uniform
+in \(\beta,\eta,Z\), but no uniformity as \(C\) grows is
+asserted. In particular,
+\[
+ \cR_1(C,\beta;a,m)\asymp_{a,C,m}\beta^{-(2M-2)/(2M-1)}.
+\]
+We will prove the upper bound by a smooth interpolation construction
+and the lower bound against every test by a finite screen. A convenient
+equivalent comparison function is \(\beta^{-1}\Phi_p(\beta\eta)\), where
+\begin{equation}\label{frontier:comparison}
+ \Phi_p(t)=
+ \begin{cases}t^{1/p},&0<t\le1,\\ \log(1+t),&t>1.
+ \end{cases}
+\end{equation}
+For fixed \(p\), this is comparable with
+\(\log(1+t^{1/p})\) on the whole positive half-line.
+
+\subsection{Three ordinate bands}
+Choose \(0<\delta\le1\) so that
+\(C(1+\delta)^m<M+1\). Such a choice exists by continuity;
+if \(m=0\), take \(\delta=1\). Integer multiplicities imply
+\(N_0(\delta)\le M\). List the distinct low locations as
+\(z_1,\ldots,z_k\), so \(2\le k\le M\).
+
+Choose any fixed \(R\ge16(a+2)\), and put
+\[
+ d_0=4/R,\qquad r_* =\lceil C(1+R)^m\rceil,\qquad V=a+R.
+\]
+Let \(v_1,\ldots,v_r\) be the distinct intermediate locations,
+with \(\delta<|\Im v_j|\le R\); then \(r\le r_*\).
+The intermediate annihilator and two useful bounds are
+\begin{equation}\label{frontier:annihilator}
+ A(w)=\prod_{j=1}^r(1-w/v_j),\qquad
+ A_0=(1+\delta^{-1})^{r_*},\qquad
+ A_1=(2V/\delta)^{r_*}.
+\end{equation}
+The coefficient sum of \(A\) is at most \(A_0\). If
+\(|\Im w|\le\delta/2\), then
+\(|1-w/v_j|>\delta/(2V)\), so \(|A(w)|^{-1}\le A_1\).
+The empty product is one. Every actual intermediate location is
+annihilated, irrespective of its multiplicity.
+
+Fix an even nonnegative \(h\in C_c^\infty(-1,1)\) with
+\(\int h=1\), and write \(G=H_h\). For \(|\Im s|\le1/4\),
+\begin{equation}\label{frontier:bump-reciprocal}
+ \Re G(s)\ge\cos(1/4)G(\Re s)\ge\cos(1/4)>1/2.
+\end{equation}
+The second inequality follows from evenness and \(\cosh x\ge1\).
+Thus the reciprocal of \(G\) is holomorphic and bounded by two
+in the narrower strip in which we will interpolate.
+
+\subsection{Grouping close nodes without a separation assumption}
+For now take free parameters
+\begin{equation}\label{frontier:free}
+ \ell\ge1,\qquad \epsilon=\beta\ell\le1,\qquad
+ \tau\ge0,\qquad T=\tau\ell.
+\end{equation}
+Scale the low nodes to \(s_j=\ell z_j\), including
+\(\epsilon,-\epsilon\), and set
+\[
+ \rho_0=\frac{\delta\epsilon}{64M(1+\tau)}.
+\]
+Choose \(\rho\in[\rho_0,2\rho_0]\) avoiding the finitely many
+radii for which two boundary circles are tangent or three distinct
+boundary circles meet. Form the union of the disks
+\(|s-s_j|<\rho\), and let \(\Omega_+,\Omega_-\) be the
+components containing \(\epsilon,-\epsilon\).
+
+A path in the disk-intersection graph uses at most \(k-1\) edges
+without repetition. Consequently every point of either selected
+component's closure is within \(2k\rho\) of its target, and
+\begin{equation}\label{frontier:thin}
+ 2k\rho\le\frac{\delta\epsilon}{16(1+\tau)},\qquad
+ |\Im s|\le\frac{\delta\epsilon}{16(1+\tau)},\qquad |s|<2
+ \quad(s\in\overline\Omega_+\cup\overline\Omega_-).
+\end{equation}
+The components are distinct, lie in opposite open half-planes, and
+are interchanged by \(s\mapsto-\overline s\). Orient their
+outer boundaries positively and any hole boundaries negatively.
+They are finite piecewise smooth contours with total length at most
+\(2\pi k\rho\). Every boundary point has distance at least
+\(\rho\) from every low node. A node in a hole is therefore
+excluded with winding number zero, as it should be.
+
+Normalize the nodal polynomial by
+\[
+ p_0(s)=\prod_{j=1}^k\frac{s-s_j}{\sqrt{1+|s_j|^2}}.
+\]
+At a selected boundary point \(\zeta\), the normalized distance
+to a node of modulus at most four is at least \(\rho/\sqrt{17}\).
+For a larger node, \(|\zeta-s_j|>|s_j|/2\), giving a lower
+bound \(1/\sqrt5\). Thus
+\begin{equation}\label{frontier:nodal}
+ |p_0(\zeta)|\ge(\rho/5)^k,\qquad
+ \left\|\frac{p_0(\zeta)-p_0(s)}{\zeta-s}\right\|_{\coef,1}
+ \le k3^{k-1}.
+\end{equation}
+Here \(\|\cdot\|_{\coef,1}\) denotes the sum of absolute
+coefficients. To see the second estimate, telescope the difference
+of the two products. A polynomial factor has coefficient sum at most
+\(\sqrt2\), an evaluated factor has modulus at most \(\sqrt5\),
+and the removed linear factor contributes at most one. Bounding the
+remaining \(k-1\) factors by three proves the assertion. This is
+the point at which normalizing far-away scaled nodes is useful.
+
+Let \(b(w)=\sinh(d_0w)/(d_0w)\), with its value one at zero.
+For real \(x,y\), elementary inequalities give
+\[
+ \left|\frac{\sinh(x+iy)}{x+iy}\right|^2
+ \ge\left(\frac{\sin y}{y}\right)^2,\qquad
+ \left|\frac{\sinh(x+iy)}{x+iy}\right|^{-K}
+ \le e^{2Ky^2}\quad(|y|\le1/4).
+\]
+Indeed \(\sinh^2x\ge x^2\), \(\sin^2y\le y^2\), and
+\(\sin y/y\ge1-y^2/6\); taking logarithms gives the second
+bound. By \eqref{frontier:thin}, on the selected closures
+\[
+ |b(s/\ell)|^{-K}\le e^{\chi K},\qquad
+ \chi=\frac{\delta^2}{8R^2}\frac{\beta^2}{(1+\tau)^2}.
+\]
+For any positive integer \(K\), the data
+\[
+ M_K(s)=\{A(s/\ell)b(s/\ell)^KG(s)\}^{-1}
+\]
+are holomorphic near both selected closures and bounded in modulus
+by \(2A_1e^{\chi K}\). Nonvanishing holds on containing small
+target disks, so possible holes cause no analytic difficulty.
+
+The polynomial
+\begin{equation}\label{frontier:interpolant}
+ P(s)=\frac1{2\pi i}
+ \left(\int_{\partial\Omega_+}-\int_{\partial\Omega_-}\right)
+ M_K(\zeta)
+ \frac{p_0(\zeta)-p_0(s)}{p_0(\zeta)(\zeta-s)}\,d\zeta
+\end{equation}
+has degree at most \(k-1\). Cauchy's formula gives the values
+\(+M_K(s_j)\), \(-M_K(s_j)\), or zero, according as the node
+is in \(\Omega_+\), \(\Omega_-\), or neither. The length
+bound and \eqref{frontier:nodal} give
+\begin{equation}\label{frontier:coefficients}
+ \|P\|_{\coef,1}\le
+ D_0\epsilon^{1-k}(1+\tau)^{k-1}e^{\chi K},\qquad
+ D_0=2A_1M^2 3^{M-1}5^M(64M/\delta)^{M-1}.
+\end{equation}
+The boundary length supplies one power of \(\rho\). Losing that
+power would give the wrong exponent in \eqref{frontier:statement}.
+No inverse minimum separation has appeared.
+
+\subsection{Selecting the tail budget before interpolation}
+We now choose \(K\), rather than assume that a later choice can
+absorb the size of the interpolant. All of the following are fixed
+once \(a,C,m,R\) are fixed:
+\[
+ \begin{split}
+ D_{\rm tail}&=D_0(2R)^{M-1}(3R/\delta)^{r_*},\\
+ S_R&=2^{m+1}C(1+R)^m,\qquad B_R=\tfrac12\log(2S_R),\\
+ d_*&=M+r_*+m,\qquad J_*=1+d_*+\log D_{\rm tail}+B_R.
+ \end{split}
+\]
+Put \(u_\beta=\log(1/\beta)\), and select
+\begin{equation}\label{frontier:K}
+ \begin{split}
+ E&=a\ell(1+\tau)+(M-1)\{u_\beta+\log(1+\tau)\}
+                      +\log D_{\rm tail},\\
+ K&=\left\lceil\max\{d_*,E+B_R\}\right\rceil
+ \le a\ell(1+\tau)+(M-1)\{u_\beta+\log(1+\tau)\}+J_*.
+ \end{split}
+\end{equation}
+Use this integer in \eqref{frontier:interpolant}. The complete
+transform will be
+\begin{equation}\label{frontier:transform}
+ \mathcal F(w)=\sqrt\ell\,P(\ell w)G(\ell w)A(w)b(w)^K\cosh(Tw).
+\end{equation}
+Before the final \(\cosh\) factor, its low-node values are
+\(+\sqrt\ell,-\sqrt\ell,0\), as prescribed, and all its
+intermediate values vanish.
+
+For \(w=\sigma+it\), \(|\sigma|\le a\), \(v=|t|>R\),
+we have
+\[
+ \begin{aligned}
+ 1+\ell|w|&\le2\ell v,&
+ |A(w)|&\le(3R/\delta)^{r_*}(v/R)^r,\\
+ |G(\ell w)|&\le e^{a\ell},&
+ |\cosh(Tw)|&\le e^{a\tau\ell},\\
+ |b(w)|&\le e^{4a/R}\frac R{4v}.&&
+ \end{aligned}
+\]
+In the polynomial bound the factors of \(\ell\) cancel exactly:
+\(\epsilon^{1-k}(2\ell v)^{k-1}=\beta^{1-k}(2v)^{k-1}\).
+Moreover \(\chi\le1/16\), \(4a/R<1/4\), and hence
+\(\log4-4a/R-\chi>1\). Substituting
+\eqref{frontier:coefficients} into \eqref{frontier:transform}
+therefore gives
+\begin{equation}\label{frontier:tailpoint}
+ |\mathcal F(\sigma+it)|\le
+ \sqrt\ell\,e^{E-K}(v/R)^{-q_*},\qquad
+ q_*=K-(k-1)-r\ge m+1.
+\end{equation}
+Dyadic summation gives
+\(\sum_{|\Im z|>R}\nu(z)(|\Im z|/R)^{-2q_*}\le S_R\).
+Apply \eqref{frontier:tailpoint} at both reflected locations to obtain
+\begin{equation}\label{frontier:tail}
+ \sum_{|\Im z|>R}\nu(z)
+  |\mathcal F(z)\overline{\mathcal F(z^\#)}|
+ \le\ell e^{2(E-K)}S_R\le\ell/2.
+\end{equation}
+The estimate concerns the full reflected tail, not a diagonal
+substitute for it.
+
+\subsection{Signs, norm, and physical support}
+Reflection exchanges the selected components. A selected pair at
+\(z\) contributes
+\(-2\nu(z)\ell\Re\cosh^2(Tz)\). By
+\eqref{frontier:thin}, \(|T\Im z|\le1/16\). The identity
+\[
+ \Re\cosh^2(x+iy)=\tfrac12\{1+\cosh(2x)\cos(2y)\}
+\]
+shows that every selected pair contributes negatively. Keeping the
+exact contribution of the targets until after tail absorption gives
+\begin{equation}\label{frontier:negative}
+ Q_Z(f,f)\le-2\ell\cosh^2(\tau\epsilon)+\ell/2
+                 \le-\tfrac12\ell e^{2\tau\epsilon}.
+\end{equation}
+All other low-node contributions and all intermediate contributions
+are zero.
+
+Here the inverse transform is an actual smooth test. Let \(\mu\)
+be uniform probability measure on \([-d_0,d_0]\), and put
+\[
+ h_\ell(u)=\ell^{-1/2}h(u/\ell),\qquad
+ f_0=\mu^{*K}*\{A(-\partial_u)P(-\ell\partial_u)h_\ell\},\qquad
+ f(u)=\tfrac12\{f_0(u-T)+f_0(u+T)\}.
+\]
+Integration by parts and Fubini give \(H_f=\mathcal F\).
+Differentiation preserves the initial bump's strict support gap, and
+convolution by a compact measure preserves smoothness. Thus
+\begin{equation}\label{frontier:support-exact}
+ f\in C_c^\infty(-L_{\rm out},L_{\rm out}),\qquad
+ L_{\rm out}=\ell(1+\tau)+4K/R.
+\end{equation}
+
+The order of operations yields an efficient norm estimate. A term
+of degree \(j\) from \(P\) and degree \(b\) from \(A\)
+acts on the bump as a scalar multiple of
+\(\ell^{-b}\ell^{-1/2}h^{(j+b)}(u/\ell)\). Its norm is at
+most \(\|h^{(j+b)}\|_2\), since \(\ell\ge1\). Probability
+convolution and the average of two translations are \(L^2\)
+contractions. Hence, with
+\(H_* =\max_{0\le j\le M-1+r_*}\|h^{(j)}\|_2\),
+\begin{equation}\label{frontier:norm}
+ \norm f_2\le A_0H_*\|P\|_{\coef,1}.
+\end{equation}
+In particular, the convolution incurs no exponential norm cost in
+\(K\), and the intermediate differential operator incurs no
+positive power of \(\ell\).
+
+Write \(\mu_0=\delta^2/(8R^2)\). Multiplying
+\eqref{frontier:K} by \(\chi=\mu_0\beta^2/(1+\tau)^2\),
+and using \(\beta\ell\le1\), gives
+\[
+ \chi K\le\mu_0\{a+(M-1)/e+J_*\}=:H_{\rm inv}.
+\]
+Here we used \(\beta^2\log(1/\beta)\le1/(2e)\) and
+\(\log(1+\tau)/(1+\tau)^2\le1/(2e)\).
+Let
+\[
+ B=\max\{1,(A_0H_*D_0)^2e^{2H_{\rm inv}}\}.
+\]
+Equations \eqref{frontier:coefficients} and \eqref{frontier:norm}
+then give
+\[
+ \|f\|_2^2\le B\left(\frac{1+\tau}{\epsilon}\right)^{2M-2}.
+\]
+The negative value proves \(f\ne0\). We have proved the following
+construction for every set of parameters in \eqref{frontier:free}:
+\begin{equation}\label{frontier:master}
+ \begin{split}
+ -\frac{Q_Z(f,f)}{\norm f_2^2}
+ &\ge c\ell\left(\frac{\beta\ell}{1+\tau}\right)^{p-1}
+                      e^{2\tau\beta\ell},\\
+ L_{\rm out}&\le D\{\ell(1+\tau)+\log(1/\beta)+1\},
+ \end{split}
+\end{equation}
+where \(c=1/(2B)>0\) and a finite \(D\) depend only on
+\(a,C,m,R,h\). For the second line, use
+\(\log(1+\tau)\le\tau\), \(\ell\ge1\) in
+\eqref{frontier:K}. For example
+\(D=1+4a/R+4(M-1)/R+4J_*/R\) suffices. We have retained
+\eqref{frontier:K} and \eqref{frontier:support-exact} separately
+because their leading dependence on \(T\) will yield an exact
+growth exponent later.
+
+\subsection{The power branch and the logarithmic branch}
+For \eqref{frontier:statement} fix \(R=16(a+2)\). Let
+\(t=\beta\eta\), \(q=(p-1)/p\), choose \(A\ge1\) with
+\(cA^p\ge2\), and put \(t_0=A^{-p}\).
+If \(0<t\le t_0\), set
+\[
+ \ell=A\beta^{-1}t^{1/p}=A\eta^{1/p}\beta^{-q},\qquad\tau=0.
+\]
+Then \(\ell\ge1\), \(\beta\ell\le1\), and the margin in
+\eqref{frontier:master} is at least \(2\eta\).
+The elementary maximum of \(x^q\log(1/x)\) gives
+\(\log(1/\beta)\le\beta^{-q}/(qe)\le\ell/(qe)\).
+Since \(q\ge2/3\), the support is at most
+\(3DA\beta^{-1}t^{1/p}\).
+
+For \(t>t_0\), take \(\ell=1/\beta\), so \(\epsilon=1\).
+Choose
+\[
+ H=\max\{1,4(p-1)^2,2\log(2/c)\},\qquad
+ K_1=\max\{1,H/\log2\},\qquad \tau=K_1\log(2+t).
+\]
+For \(\tau\ge H\), the inequality
+\(\log(1+\tau)\le\sqrt\tau\) implies
+\((p-1)\log(1+\tau)\le\tau/2\). One direct verification
+of the logarithmic inequality differentiates
+\(\sqrt x-\log(1+x)\), whose derivative is
+\((\sqrt x-1)^2/(2\sqrt x(1+x))\ge0\).
+It follows that \(ce^\tau/(1+\tau)^{p-1}\ge2\).
+The margin is therefore at least
+\(2\beta^{-1}e^\tau>2\eta\), while the support is bounded by
+a fixed constant times \(\beta^{-1}\log(2+t)\).
+For \(t\ge1\), this is at most twice the logarithmic scale in
+\eqref{frontier:comparison}. For the remaining interval
+\(t_0<t\le1\), use
+\(\log(2+t)\le\log3\le A\log3\,t^{1/p}\).
+This covers the entire transition interval and proves the upper
+bound, always with a strict margin reserve.
+
+\subsection{A matching obstruction for every test}
+Let \(n=M-2\), so \(p=2n+3\), and define
+\begin{equation}\label{frontier:lower-screen}
+ T_n^2=(n+1)^3 4^n,\qquad R_n=24T_n^2,\qquad
+ Z_{n,\beta}=[\beta]+[-\beta]+\sum_{j=1}^n[i\beta R_nj].
+\end{equation}
+The notation \([z]\) denotes one atom. This divisor has total mass
+\(M\le C\), and so satisfies the whole polynomial counting bound.
+
+For every polynomial \(P\) of degree at most \(n\), with
+coefficient vector \(b\), we first claim
+\begin{equation}\label{frontier:moment-positive}
+ 2\Re(P(1)\overline{P(-1)})+\sum_{j=1}^n|P(iR_nj)|^2
+ \ge(2T_n^2)^{-1}\|b\|_2^2.
+\end{equation}
+Lagrange interpolation at \(0,i,\ldots,in\) gives basis
+polynomials of coefficient sum at most \((n+1)2^n\): the
+denominator at \(ij\) has modulus \(j!(n-j)!\), while the
+numerator's coefficient sum is at most \((n+1)!\).
+Cauchy--Schwarz consequently gives
+\[
+ 2|p(0)|^2+\sum_{j=1}^n|p(ij)|^2\ge T_n^{-2}\|\coef(p)\|_2^2.
+\]
+For \(0\le h\le1/2\), a geometric-series estimate gives
+\(|p(\pm h)-p(0)|\le2h\|\coef(p)\|_2\).
+Replacing \(2|p(0)|^2\) by
+\(2\Re(p(h)\overline{p(-h)})\) changes the form by at most
+\(12h\|\coef(p)\|_2^2\). Take \(h=1/R_n\) and apply this
+to \(p(w)=P(R_nw)\); its coefficient norm is at least that
+of \(P\). This proves \eqref{frontier:moment-positive}, including
+\(n=0\).
+
+For \(g\in L^2(-1,1)\), Taylor expand
+\[
+ H_g(\epsilon s)=P_g(s)+r_g(s),\qquad
+ P_g(s)=\sum_{k=0}^n\frac{\epsilon^ks^k}{k!}\int_{-1}^1x^kg(x)\,dx.
+\]
+Set \(K_0=\max(1,nR_n)\). At each of the fixed nodes
+\(1,-1,iR_n,\ldots,inR_n\), the exponential remainder gives
+\[
+ |r_g(s)|\le E_n\epsilon^{n+1}\|g\|_2,\qquad
+ E_n=\frac{\sqrt2 eK_0^{n+1}}{(n+1)!},\qquad K_0\epsilon\le1.
+\]
+Let \(V_n\) evaluate coefficient vectors at these nodes and let
+\(J_0\) swap the first two coordinates and fix the others.
+Its norm is one. With \(b=\coef(P_g)\), the polynomial part
+is at least \(b_n\|b\|^2\), where \(b_n=(2T_n^2)^{-1}\).
+The cross term is bounded by \(2\|V_n\|\|b\|\|r\|\).
+Completing the square gives
+\[
+ (V_nb+r)^*J_0(V_nb+r)
+ \ge-(1+\|V_n\|^2/b_n)\|r\|^2
+ \ge-D_n\epsilon^{2n+2}\|g\|_2^2,
+\]
+with \(D_n=(1+\|V_n\|^2/b_n)(n+2)E_n^2\).
+Scaling from \((-1,1)\) to \((-L,L)\) yields the all-test estimate
+\begin{equation}\label{frontier:all-test-lower}
+ Q_{Z_{n,\beta}}(f,f)\ge-D_nL(\beta L)^{p-1}\|f\|_2^2
+ \qquad(\beta L\le K_0^{-1}).
+\end{equation}
+This bounds the original form, not merely a polynomial compression.
+
+For \(t=\beta\eta\le1\), choose \(k_1>0\) so that
+\(k_1\le K_0^{-1}\), \(D_nk_1^p\le1/2\), and take
+\(L=k_1\beta^{-1}t^{1/p}\). The envelope is at most
+\(\eta/2\), excluding the requested margin at this radius and
+all smaller radii. For \(t\ge1\), axis positivity and
+\eqref{eq:single-pair} instead imply
+\[
+ \cM_{Z_{n,\beta}}(L)\le e^{2\beta L}/(2\beta).
+\]
+At \(L=(4\beta)^{-1}\log(1+t)\), its ratio to \(\eta\)
+is at most \(\sqrt{1+t}/(2t)\le\sqrt2/2<1\).
+Taking the smaller lower constant proves
+\eqref{frontier:statement} in both regimes with the same finite screen.
+
+\subsection{The exact role of centered conjugation symmetry}
+If in addition \(Z=\overline Z\) in the coordinates used above,
+let \(\cR_\eta^{\rm sym}\) denote the supremum over this smaller
+class. Then
+\begin{equation}\label{frontier:symmetric}
+ \cR_\eta^{\rm sym}(C,\beta;a,m)
+ \asymp_{a,C,m}
+ \beta^{-1}\log\bigl(1+(\beta\eta)^{1/p_e}\bigr),\qquad
+ p_e=4\lfloor C/2\rfloor-1.
+\end{equation}
+Here too \(\eta\ge1\) and \(0<\beta\le\min(a,1)\).
+
+To obtain the upper bound, omit zero from the low interpolation list.
+Every remaining location has its distinct negative with equal
+multiplicity, so the number of distinct nonzero low nodes is even
+and at most \(M_e=2\lfloor C/2\rfloor\). Use \(M_e\) in all
+local degree and contour budgets, retaining the original count for
+the intermediate and tail bounds. The intermediate polynomial
+\(A\) is even and real, as are \(G\) and \(b\).
+The selected positive component is conjugation-invariant and the
+negative component is its negative. The prescribed interpolation
+data are odd and conjugation-compatible. Uniqueness of polynomial
+interpolation therefore shows that \(P\) is odd and has real
+coefficients. The resulting physical test is real and odd. Its
+transform vanishes at zero, accounting for every omitted zero
+multiplicity. All estimates already proved hold with exponent
+\(2M_e-1=p_e\).
+
+For the lower bound write \(M_e=2r+2\), and use
+\[
+ [\beta]+[-\beta]+\sum_{j=1}^r
+        \{[i\beta R_rj]+[-i\beta R_rj]\},\qquad
+ T_r^2=(2r+1)(r+1)^{4r},\qquad R_r=24T_r^2.
+\]
+Lagrange interpolation on \(-ir,\ldots,0,\ldots,ir\)
+has coefficient bound \(T_r\) by the same argument: each
+numerator coefficient sum is at most \((r+1)^{2r}\), and
+each denominator modulus is at least one. The perturbation from
+the repeated zero evaluations to \(\pm1/R_r\) costs at most
+\(12/R_r\) times the squared coefficient norm. It follows that
+the signed evaluation form is bounded below by
+\((2T_r^2)^{-1}\|\coef(P)\|^2\) on all complex polynomials
+of degree at most \(2r\). Taylor truncation at that degree and
+the identical square completion give
+\[
+ Q_Z(f,f)\ge-D_rL(\beta L)^{4r+2}\|f\|_2^2
+ \quad\bigl(\beta L\le\max(1,rR_r)^{-1}\bigr)
+\]
+for a finite constant \(D_r\). Since \(4r+3=p_e\), this is
+the required small-margin obstruction; \eqref{eq:single-pair}
+gives the logarithmic obstruction. Both hold for all complex tests,
+not only odd ones.
+
+The qualification ``centered'' is essential. If an original divisor
+is globally conjugation-symmetric and is moved by \(-i\gamma\)
+to put a target at ordinate zero, its original conjugation becomes
+\(w\mapsto\overline w-2i\gamma\), not
+\(w\mapsto\overline w\). Thus ordinary global conjugation does
+not justify \eqref{frontier:symmetric} at a nonzero target height.
+
+\subsection{Fixed continuous counting profiles}
+The proof uses only an integer low-node budget, a finite intermediate
+budget, and a polynomial tail. Consequently, for each fixed continuous
+nondecreasing \(g:[1,\infty)\to[1,\infty)\), with \(g(1)=1\)
+and \(g(2t)\le\Delta g(t)\), both laws hold under
+\(N_0(Y)\le C(1+Y)g(1+Y)\), with constants depending on
+\(a,C,g\). Indeed, continuity supplies
+\(C(1+\delta)g(1+\delta)<\lfloor C\rfloor+1\), and
+doubling gives \(g(t)\le\Delta t^{\log_2\Delta}\).
+The finite lower examples still satisfy the entire count because
+their total mass is at most \(C\). A common doubling constant
+does not supply a common modulus of continuity at one, so this
+observation asserts no uniformity over all such profiles.

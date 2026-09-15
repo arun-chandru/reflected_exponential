@@ -1,0 +1,65 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1.08in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,microtype,booktabs}
+\usepackage[hidelinks]{hyperref}
+\numberwithin{equation}{section}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\coef}{\operatorname{coef}}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\Ima}{\operatorname{Im}}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
+\title[Support, screening, and negative growth]{Support, Screening, and Negative Growth\\of Reflected Exponential Forms}
+\author{R. Arun Chandru}
+\address{Department of Aerospace Engineering \\ Indian Institute of Science}
+\email{arun.chandru@gmail.com}
+\date{September 15, 2026}
+\subjclass[2020]{Primary 42A38, 30E05; Secondary 42C15, 15A63, 30D15}
+\keywords{Reflected exponential forms, compact support, normalized negative margin, reflected divisors, complex interpolation, Chebyshev screening, flat limit, Paley--Wiener space}
+\begin{document}
+\begin{abstract}
+We study compactly supported negative tests for exponential forms
+associated with reflected divisors in a vertical strip. For a fixed
+polynomial counting budget, we determine the order of the worst support
+required to attain a prescribed normalized negative margin in the
+presence of an off-axis pair. The estimate is uniform over arbitrary
+additional reflected pairs and infinite backgrounds, without separation
+between distinct locations. A centered conjugation symmetry changes
+the exponent through the parity of the local counting budget. We also
+derive an explicit small-displacement transition for finite screens
+and prove its stability under a fixed polynomial-count axis background.
+For a fixed divisor, negative values have a lower exponential growth
+rate determined by the outer displacement; a weighted local condition
+gives the matching upper rate. Finally, we construct locally
+semibounded forms with fixed sparse and logarithmic counting bounds
+whose negative envelopes dominate any prescribed growth. These
+results concerning abstract reflected forms separate support, normalized margin, and large-window growth.
+\end{abstract}
+\maketitle
+\tableofcontents
+\input{introduction.tex}
+\input{basics.tex}
+\input{frontier.tex}
+\input{screening.tex}
+\input{growth.tex}
+\input{arbitrary_growth.tex}
+\input{arithmetic.tex}
+
+\section*{Acknowledgments}
+The author is indebted to his family for their extraordinary patience and support. He is grateful to Dr. C. Oommen and Prof. B. N. Raghunandan of the Department of Aerospace Engineering, Indian Institute of Science, for their mentorship and for fostering the intellectual latitude that enabled this independent research.
+
+\section*{Note on AI Use}
+The author declares the use of consumer-grade Gemini-3 and GPT-6 models for prior-art search, exploring and developing some ideas and proofs, drafting and LaTeX typesetting; the author takes full and sole responsibility for all contents of this work.
+
+\input{references.tex}
+\end{document}

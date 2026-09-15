@@ -1,0 +1,145 @@
+\section{Reflected forms and compact tests}
+\label{sec:basics}
+
+Throughout, a divisor is a locally finite multiset of complex numbers.
+We sum over its distinct locations and denote their positive integer
+multiplicities by \(\nu(z)\). Fix a strip half-width \(a>0\), and
+assume
+\begin{equation}\label{eq:divisor}
+ |\Re z|\le a,\qquad z^\#=-\overline z,\qquad
+ z\in Z\Longleftrightarrow z^\#\in Z,\qquad
+ \nu(z)=\nu(z^\#).
+\end{equation}
+Unless explicitly restricted to a finite divisor, we assume a polynomial
+ordinate count: there are finite \(C>0,m\ge0\) such that
+\begin{equation}\label{eq:polynomial-count}
+ N_0(Y):=\sum_{|\Im z|\le Y}\nu(z)\le C(1+Y)^m
+ \qquad(Y\ge0).
+\end{equation}
+The constants need not be uniform over all divisors except in the
+uniform assertions where this is stated.
+
+For \(f,g\in C_c^\infty(\R;\C)\), set
+\begin{equation}\label{eq:form}
+ H_f(z)=\int_\R f(u)e^{zu}\,du,\qquad
+ Q_Z(f,g)=\sum_{z\in Z}\nu(z)H_f(z)\overline{H_g(z^\#)}.
+\end{equation}
+Our inner products are linear in the first variable. Repeated
+integration by parts gives, for every integer \(j\ge0\),
+\[
+ \sup_{|\sigma|\le a}|H_f(\sigma+it)|
+ \le C_{f,j,a}(1+|t|)^{-j}.
+\]
+For \(|t|\ge1\), this follows by integrating the Fourier transform
+of \(e^{\sigma u}f(u)\) by parts \(j\) times, uniformly in the
+bounded real parameter; bounded \(t\) is immediate. Dyadic summation
+using \eqref{eq:polynomial-count} proves absolute convergence of
+\eqref{eq:form}. Changing \(z\) to \(z^\#\) then proves
+\(Q_Z(f,g)=\overline{Q_Z(g,f)}\).
+
+For \(z=\sigma+i\gamma\) with \(\sigma>0\), write
+\[
+ A_z(f)=\frac{H_f(\sigma+i\gamma)+H_f(-\sigma+i\gamma)}2,
+ \qquad
+ D_z(f)=\frac{H_f(\sigma+i\gamma)-H_f(-\sigma+i\gamma)}2.
+\]
+The two locations of this pair contribute exactly
+\begin{equation}\label{eq:pair}
+ 2\nu(z)\bigl(|A_z(f)|^2-|D_z(f)|^2\bigr).
+\end{equation}
+An axis location \(i\gamma\) contributes
+\(\nu(i\gamma)|H_f(i\gamma)|^2\ge0\). Formula
+\eqref{eq:pair} explains both the possibility of a negative test
+and the possibility that positive terms screen it. Multiplicity
+weights a value; it does not ask the transform to vanish to higher
+order.
+
+The quantities studied below are
+\begin{equation}\label{eq:envelope-radius}
+ \begin{split}
+ \cM_Z(L)&=\sup_{0\ne f\in C_c^\infty(-L,L)}
+       \left(-Q_Z(f,f)/\norm f_2^2\right)_+,\qquad L>0,\\
+ r_Z(\eta)&=\inf\{L>0:\ \exists\,0\ne f\in C_c^\infty(-L,L),
+                 \ Q_Z(f,f)\le-\eta\norm f_2^2\},\qquad\eta>0.
+ \end{split}
+\end{equation}
+Here \(x_+=\max(x,0)\), the first supremum may be infinite,
+and the infimum of the empty set is infinite. No extremum is assumed
+attained. In particular, \(\cM_Z(L)>\eta\) supplies an actual
+test with margin exceeding \(\eta\), whereas equality alone need
+not. Enlarging \(L\) enlarges the test class, so \(\cM_Z\)
+is nondecreasing. Adding an axis divisor can only decrease this
+envelope. We say that the form is locally semibounded when
+\(\cM_Z(L)<\infty\) for every finite \(L>0\); this terminology
+asserts a bound on the smooth test class, not a closed operator
+realization.
+
+\subsection{Changing the center and the scale}
+For a target ordinate \(\gamma\), use the centered count
+\[
+ N_\gamma(Y)=\sum_{|\Im z-\gamma|\le Y}\nu(z).
+\]
+If \(W=Z-i\gamma\) and \(f(u)=e^{-i\gamma u}v(u)\), then
+\(H_f(z)=H_v(z-i\gamma)\) and
+\(Q_Z(f,f)=Q_W(v,v)\). Norm and support are unchanged.
+Thus a target can be moved to the real axis without a
+height-dependent cost in the test norm. An origin-centered count
+\eqref{eq:polynomial-count} implies the centered bound
+\[
+ N_\gamma(Y)\le C(1+|\gamma|)^m(1+Y)^m.
+\]
+The constant here depends on the chosen target.
+
+For \(\alpha>0\), let \(W=Z/\alpha\), with the same
+multiplicities, and put \(f(u)=\sqrt\alpha\,v(\alpha u)\).
+Direct substitution yields
+\begin{equation}\label{eq:scale}
+ \norm f_2=\norm v_2,\qquad
+ H_f(z)=\alpha^{-1/2}H_v(z/\alpha),\qquad
+ Q_Z(f,f)=\alpha^{-1}Q_W(v,v).
+\end{equation}
+A radius \(L\) for \(v\) becomes \(L/\alpha\) for \(f\).
+These factors will matter when passing from a normalized strip to
+a growth rate.
+
+\subsection{Finite features and their inertia}
+For a finite divisor, \eqref{eq:form} extends continuously to
+\(L^2(-L,L)\). List its distinct locations as \(z_1,\ldots,z_N\),
+and define \((Ef)_j=\sqrt{\nu(z_j)}H_f(z_j)\).
+Let \(J\) permute coordinates according to reflection. Then
+\begin{equation}\label{eq:finite-features}
+ Q_Z(f,f)=\langle Ef,JEf\rangle_{\C^N},\qquad
+ A_Z=E^*JE.
+\end{equation}
+The exponential functions representing the evaluations are linearly
+independent on every nonempty interval. Indeed, a vanishing finite
+linear combination is analytic and hence vanishes identically;
+its first \(N\) derivatives at any point give an invertible
+Vandermonde system. Thus \(E\) is onto. On the orthogonal complement
+of its kernel, \eqref{eq:finite-features} is a congruence of \(J\).
+There is one negative direction for each distinct off-axis reflected
+pair, one positive direction for each such pair, and one positive
+direction for each distinct axis location. All remaining directions
+are null. This finite-inertia mechanism is classical; compare
+Bombieri's finite exponential-kernel analysis \cite[Sections 8--9]{Bombieri}.
+
+Smooth compact functions are dense in \(L^2(-L,L)\), and the
+finite form is continuous. Consequently its least Rayleigh value
+and negative envelope can be computed on either class. A strict
+inequality found in \(L^2\) survives smooth approximation. For an
+infinite axis background the form need not be bounded, so this
+density argument cannot be used without additional estimates.
+The fixed-background argument below supplies those estimates.
+
+Finally, for the single unit pair \([\beta]+[-\beta]\),
+\eqref{eq:pair} and the even/odd decomposition give
+\begin{equation}\label{eq:single-pair}
+ \cM_{[\beta]+[-\beta]}(L)
+ =2\norm{\sinh(\beta u)}_{L^2(-L,L)}^2
+ =\beta^{-1}\{\sinh(2\beta L)-2\beta L\}.
+\end{equation}
+This exact elementary example has size
+\((4/3)\beta^2L^3\) when \(\beta L\) tends to zero and
+size \(e^{2\beta L}/(2\beta)\) when \(\beta L\) tends to
+infinity. The question is how much these scales can be delayed
+by a counting budget and a positive background.

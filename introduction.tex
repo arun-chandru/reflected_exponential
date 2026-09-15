@@ -1,0 +1,235 @@
+\section{Support, margin, and growth}
+\label{sec:introduction}
+
+A negative direction can exist and yet be difficult to resolve.
+For a reflected exponential form, a pair away from the imaginary
+axis creates an indefinite contribution. Other locations can mask
+that contribution on a short interval, or leave a negative value
+whose size is much smaller than the norm of its test. This leads
+to three different questions: when does negativity first occur;
+how much support is needed for a specified normalized margin;
+and how rapidly can the negative envelope grow for one fixed
+infinite configuration?
+
+The distinction is already visible in a single pair. If
+\(H_f(z)=\int f(u)e^{zu}\,du\), the pair at \(\beta,-\beta\)
+contributes \(2\Re(H_f(\beta)\overline{H_f(-\beta)})\).
+On \((-L,L)\), its largest normalized negative value is
+\[
+ \beta^{-1}\{\sinh(2\beta L)-2\beta L\}.
+\]
+It is positive for every \(L>0\), but for \(\beta L\ll1\)
+it is approximately \((4/3)\beta^2L^3\). Thus existence of a
+negative test and existence of a unit-margin test are already
+different assertions before a background is added.
+
+We study these questions for locally finite divisors \(Z\) in
+\(|\Re z|\le a\), invariant under \(z^\#=-\overline z\), with
+positive integer multiplicities and a polynomial bound on the
+number of locations counted with multiplicity. The form is
+\[
+ Q_Z(f,g)=\sum_{z\in Z}\nu(z)H_f(z)\overline{H_g(z^\#)}.
+\]
+We work throughout with actual compact smooth tests. Write
+\(\cM_Z(L)\) for the supremum of the positive part of
+\(-Q_Z(f,f)/\|f\|_2^2\) on \((-L,L)\), and \(r_Z(\eta)\)
+for the infimum of radii admitting a test with margin at least
+\(\eta\). The definitions, including infinite envelopes and
+nonattained infima, are given in Section~\ref{sec:basics}.
+
+\subsection{The uniform support law}
+Our first main result fixes the counting parameters and varies
+the displacement and requested margin. Suppose
+\[
+ N_0(Y)=\sum_{|\Im z|\le Y}\nu(z)\le C(1+Y)^m
+ \quad(Y\ge0),\qquad C\ge2,
+\]
+and require \(\beta,-\beta\in Z\). All other reflected pairs
+are permitted. Let \(\cR_\eta(C,\beta;a,m)\) be the worst
+value of \(r_Z(\eta)\) over this entire class. For fixed
+\(a,C,m\), we prove
+\begin{equation}\label{intro:frontier}
+ \cR_\eta(C,\beta;a,m)\asymp_{a,C,m}
+ \beta^{-1}\log\left(1+(\beta\eta)^{1/(2\lfloor C\rfloor-1)}\right),
+ \qquad \eta\ge1,\quad0<\beta\le\min(a,1).
+\end{equation}
+This is an order estimate, not an exact leading minimax constant.
+At unit margin the support exponent is
+\((2\lfloor C\rfloor-2)/(2\lfloor C\rfloor-1)\).
+The witness may depend on the entire divisor. The conclusion
+does not provide a predetermined finite collection of tests.
+
+The local integer budget determines the exponent, while the
+rest of the counting bound enters the constants. Arbitrarily
+close distinct nodes prevent a naive interpolation estimate
+based on inverse separation. We instead prescribe opposite
+values on two reflected groups of nearby nodes, annihilate
+an intermediate band, and suppress the full remaining tail.
+The grouped contour length saves one power in the coefficient
+estimate. Applying the intermediate polynomial as a differential
+operator in physical coordinates, before a probability
+convolution, preserves the needed norm bound. Finite unit-weight
+screens give the matching obstruction against every test.
+
+An additional conjugation symmetry about the target ordinate
+changes the exponent denominator to \(4\lfloor C/2\rfloor-1\).
+This is a parity effect of the integer count: an origin atom
+is invisible to an odd test and the remaining local mass is
+even. It is not legitimate to infer the centered symmetry
+from global conjugation after translating a nonzero target
+height. Section~\ref{sec:frontier} proves both versions with
+their full parameter ranges.
+
+\subsection{A finite transition and two infinite-divisor conclusions}
+Finite screens make the mechanism more explicit. For the
+Chebyshev screen
+\[
+ \mathcal S_{n,\beta}
+ =128\sum_{j=1}^n
+       \left[i\beta n\cos\frac{(2j-1)\pi}{2n}\right]
+       +[\beta]+[-\beta],
+ \qquad d=2\lfloor n/2\rfloor+1,
+\]
+we compute the unique negative eigenvalue and obtain
+\[
+ \cM_{\mathcal S_{n,\beta}}(L)
+ =c_n\beta^{2d}L^{2d+1}\bigl(1+O_n((\beta L)^2)\bigr),
+ \qquad c_n>0.
+\]
+Here \(n\) is fixed and \(\beta L\to0\). For any fixed
+polynomial-count axis divisor \(A\), the leading transition
+survives:
+\begin{equation}\label{intro:fixed-background}
+ \cM_{\mathcal S_{n,\beta}+A}(x\beta^{-q})
+ \longrightarrow c_nx^{2d+1},\qquad
+ q=\frac{2d}{2d+1},\quad\beta\downarrow0,
+\end{equation}
+locally uniformly for \(x>0\). The background may define
+an unbounded positive form. It is held fixed, and the
+window expands; neither qualification can be omitted.
+The proof in Section~\ref{sec:screening} uses finite smooth
+moment recovery followed by a separate high-frequency
+estimate on that fixed space.
+
+For a fixed divisor with a nonempty off-axis part, put
+\(s_Z=\sup\{\Re z:z\in Z,\ \Re z>0\}\). Polynomial counting
+alone gives
+\begin{equation}\label{intro:lower-growth}
+ \liminf_{L\to\infty}\frac{\log\cM_Z(L)}L\ge2s_Z.
+\end{equation}
+The logarithm is interpreted in the extended sense if an
+envelope is infinite. If, in addition,
+\[
+ B_Z=\sup_{y\in\R}
+ \sum_{\substack{z=\sigma+i\gamma\in Z\\
+                 \sigma>0,\ |\gamma-y|\le1}}
+       \nu(z)\sigma^2<\infty,
+\]
+then \(\log\cM_Z(L)/L\to2s_Z\), and
+\(r_Z(\eta)\sim(2s_Z)^{-1}\log\eta\) as \(\eta\to\infty\).
+Section~\ref{sec:growth} proves the lower construction in
+every sufficiently large window and the upper estimate by
+a weighted area-mean argument. The condition on \(B_Z\)
+is sufficient, not a characterization of local semiboundedness.
+
+Our second main conclusion shows how far local semiboundedness
+alone is from a growth law. Given any finite-valued positive
+nondecreasing \(G\) on \([2,\infty)\), we construct one
+divisor, invariant under both reflection and conjugation,
+in \(|\Re z|\le1\), for which
+\begin{equation}\label{intro:arbitrary}
+ \begin{gathered}
+ N_0(Y)\le Y+2,\qquad N_t(1)\le2+\log(2+|t|),\\
+ \cM_Z(L)<\infty\quad(0<L<\infty),\qquad
+ \cM_Z(L)\ge G(L)\quad(L\ge2).
+ \end{gathered}
+\end{equation}
+The constants in the count bounds do not depend on \(G\).
+The construction separates two radii with a finite screen
+and then places conjugate pairs of screens far apart in
+height. It controls both the effect of each new component
+on old witnesses and the effect of old components on the
+new witness. Summable small-window negative bounds coexist
+with the prescribed large-window witnesses.
+
+There is no conflict between \eqref{intro:frontier},
+\eqref{intro:fixed-background}, and \eqref{intro:arbitrary}.
+The first takes a supremum over varying divisors with fixed
+counting parameters; the second holds one axis background
+fixed while a displacement tends to zero; the third fixes
+a specially constructed infinite divisor and lets support
+grow. Keeping these quantifiers visible is central to the
+subject.
+
+\subsection{Relation to prior work and the contribution here}
+The arithmetic motivation is Weil's positivity criterion,
+but the forms in this paper are abstract. Bombieri
+\cite[Sections 4, 8--11]{Bombieri} studies compact-support
+variational problems for the actual Weil functional and
+finite exponential-kernel matrices. In particular, his
+finite-matrix analysis determines negative inertia from
+off-axis pairs and discusses the delicate passage to
+infinite configurations. We use the elementary finite
+inertia mechanism as background, not as a new result.
+Our uniform result specifies the joint support and
+\(L^2\)-margin cost over a polynomial-count class, allowing
+an arbitrary additional off-axis part and controlling its
+entire tail. It is not an arithmetic strengthening of
+Bombieri's conclusions.
+
+The collision powers in finite exponential systems also
+have substantial precedents in superresolution. Demanet
+and Nguyen \cite[Theorem 2 and Corollary 3]{DemanetNguyen}
+obtain sharp small-bandwidth powers for sparse recovery
+on a grid. Batenkov, Demanet, Goldman, and Yomdin
+\cite[Theorems 3.2 and 3.9]{BatenkovEtAl} give lower bounds
+for nonuniform Fourier matrices under specified clustering
+conditions, together with examples having the matching
+cluster-size power. Those are
+singular-value and recovery problems. Here the quantity
+is an indefinite, normalized quadratic value, and the
+upper construction must preserve signs in an infinite
+complex reflected configuration. The appearance of an
+odd power is not itself a novelty.
+
+Likewise, the moment and Schur-complement calculations
+used for a finite screen belong to established
+perturbation theory. Barthelm\'e and Usevich
+\cite{BarthelmeUsevich} treat kernel matrices in the flat
+limit, and Usevich and Barthelm\'e \cite{UsevichBarthelme}
+treat analytic symmetric perturbations, including
+indefinite matrices. The contribution of our finite-screen
+analysis is the explicit negative-margin transition and
+the fixed infinite-background limit
+\eqref{intro:fixed-background}, not a new general
+matrix-perturbation method. We include the calculation
+needed here rather than require a general perturbation
+theorem. Classical interpolation and orthogonal-polynomial
+normalizations are recorded in \cite{DLMF}.
+
+Finite zero-annihilating products multiplied by high powers
+of sinc also occur in Zhu's RH-conditional construction
+\cite[Section 13.2]{Zhu}. That product--window template is
+not claimed as novel in this work. The sign-compatible interpolation,
+physical norm estimate, and full-tail bounds required for
+our indefinite problem are proved below; none of that
+preprint's other arithmetic assertions is used.
+
+The principal conclusions established here are therefore the
+full-class fixed-count law \eqref{intro:frontier}, its
+centered-symmetry refinement, the stated fixed-background
+transition, and the separation between local
+semiboundedness and arbitrary growth
+\eqref{intro:arbitrary}. The fixed-divisor growth estimates
+connect these conclusions and give a useful sufficient
+class in which the outer displacement is recoverable
+from the exponential rate.
+
+Recent work on compact Weil operators and near-radical
+vectors, for example Connes and Consani
+\cite{ConnesConsani}, concerns additional arithmetic
+structure that our abstract divisor class does not
+possess. The final section gives the actual prime,
+gamma, and polar expression in our normalization and
+explains what an arithmetic upper bound
+would imply. We prove no such new upper bound here.

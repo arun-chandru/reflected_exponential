@@ -1,0 +1,727 @@
+\section{Exact finite screening and fixed-background transitions}
+\label{sec:screening}
+
+We next determine an exact small-displacement coefficient for a symmetric
+finite screen and show that it survives every fixed polynomial-count axis
+background. The background may define an unbounded positive form on a
+fixed window. The argument does not assume its boundedness and does not
+let either the screen size or the background vary with the displacement.
+The finite-dimensional flat-limit and Schur-complement tools used below
+are established perturbation methods; see \cite{UsevichBarthelme}.
+We give the signed calculation and the smooth-background transfer in full.
+
+\subsection{The coefficient and the two asymptotic conclusions}
+
+For an integer \(n\ge1\), define the divisor
+\begin{equation}\label{scr:screen-definition}
+ \mathcal S_{n,\beta}
+ =128\sum_{j=1}^n
+   \left[i\beta n\cos\frac{(2j-1)\pi}{2n}\right]
+       +[\beta]+[-\beta],
+ \qquad \beta>0.
+\end{equation}
+Here \([z]\) is an atom of unit multiplicity. Thus the screen has total
+multiplicity \(128n+2\), although only \(n+2\) distinct locations.
+Put
+\begin{equation}\label{scr:parameters}
+ r=\lfloor n/2\rfloor,\qquad d=2r+1,\qquad
+ t_j=n\cos\frac{(2j-1)\pi}{2n}>0\quad(1\le j\le r),
+ \qquad \alpha_n=\operatorname{arsinh}(1/n).
+\end{equation}
+An empty sum is zero and an empty product is one. Define
+\begin{align}
+ \kappa_n
+ &=\frac4n\sum_{k=0}^{r-1}
+              \sinh^2((2k+1)\alpha_n)
+   =\frac1n\left\{
+       \frac{\sinh(4r\alpha_n)}{\sinh(2\alpha_n)}-2r
+            \right\},                                      \label{scr:kappa}\\
+ P_n
+ &=\prod_{j=1}^r(1+t_j^2)
+   =n^n2^{1-n}
+       \begin{cases}
+        \cosh(n\alpha_n),&n\ \text{even},\\
+        \sinh(n\alpha_n),&n\ \text{odd},
+       \end{cases}                                         \label{scr:product}\\
+ h_j
+ &=\frac{2^{2j+1}(j!)^4}{(2j+1)((2j)!)^2}.                 \label{scr:legendre-norm}
+\end{align}
+In particular, \(P_1=1\), \(\kappa_1=0\), and
+\(0\le\kappa_n<16<128\). The positive coefficient governing the
+screen is
+\begin{equation}\label{scr:coefficient}
+ c_n=\frac{2P_n^2h_d}{(d!)^2(1-\kappa_n/128)}
+     =\frac{2^{2d+2}(d!)^2P_n^2}
+       {(2d+1)((2d)!)^2(1-\kappa_n/128)}.
+\end{equation}
+
+On \(L^2(-L,L)\), the finite-screen operator has exactly one
+negative eigenvalue, denoted by \(\mu_-(n,\beta,L)\). For each fixed
+\(n\), with \(\epsilon=\beta L\),
+\begin{equation}\label{scr:eigenvalue}
+ \mu_-(n,\beta,L)
+   =-L c_n\epsilon^{2d}
+                   \bigl(1+O_n(\epsilon^2)\bigr),
+ \qquad \epsilon\longrightarrow0^+.
+\end{equation}
+The estimate depends on \(\beta,L\) only through the displayed factor
+\(L\) and the parameter \(\epsilon\). Its error is not claimed to
+be uniform in \(n\). The leading power in the magnitude of the
+negative eigenvalue is
+\[
+ 2d=
+ \begin{cases}
+  2n,&n\ \text{odd},\\
+  2n+2,&n\ \text{even}.
+ \end{cases}
+\]
+After unitary scaling to \((-1,1)\), a normalized negative
+eigenfunction tends, up to a unit scalar, to the normalized odd
+Legendre polynomial of degree \(d\).
+
+Now let \(\mathcal A\) be a fixed locally finite divisor on
+\(i\R\), with positive integer multiplicities and
+\begin{equation}\label{scr:background-count}
+ N_{\mathcal A}(Y):=
+   \sum_{\substack{i\gamma\in\mathcal A\\|\gamma|\le Y}}
+      \nu_{\mathcal A}(i\gamma)
+ \le C_{\mathcal A}(1+Y)^{m_{\mathcal A}},
+ \qquad Y\ge0,
+\end{equation}
+for finite constants \(C_{\mathcal A}\ge0\) and
+\(m_{\mathcal A}\ge0\). The divisor may be empty, may contain the
+origin, and need not be separated at large ordinates. Set
+\[
+ Z_\beta=\mathcal A\sqcup\mathcal S_{n,\beta},\qquad
+ q_n=\frac{2d}{2d+1},
+\]
+where the union adds multiplicities, and define
+\begin{equation}\label{scr:margin-definition}
+ \cM_{Z_\beta}(L)
+ =\sup_{\substack{0\ne f\in C_c^\infty((-L,L))}}
+       \max\left\{0,-\frac{Q_{Z_\beta}(f,f)}{\norm f_2^2}\right\}.
+\end{equation}
+For fixed \(n\) and fixed \(\mathcal A\),
+\begin{equation}\label{scr:transition}
+ \cM_{Z_\beta}(x\beta^{-q_n})
+       \longrightarrow c_nx^{2d+1}
+ \quad\text{locally uniformly for }x\in(0,\infty),
+ \qquad \beta\longrightarrow0^+.
+\end{equation}
+In particular, for each fixed \(\eta>0\), let
+\[
+ L_\eta(\beta)
+ =\inf\left\{L>0:\ \exists\,0\ne f\in C_c^\infty((-L,L)),
+           \ Q_{Z_\beta}(f,f)\le-\eta\norm f_2^2\right\},
+\]
+with the infimum of the empty set equal to \(+\infty\). Then
+\begin{equation}\label{scr:first-radius}
+ L_\eta(\beta)\sim
+       \left(\frac{\eta}{c_n}\right)^{1/(2d+1)}
+                     \beta^{-2d/(2d+1)}.
+\end{equation}
+The same asymptotic holds if the defining inequality is strict.
+Thus neither separation nor the size of the fixed axis background
+enters the leading constant. No uniformity over varying backgrounds
+is asserted.
+
+\subsection{Scaling, parity, and exact inertia}
+
+The unitary change of variables
+\[
+ g(x)=\sqrt L\,f(Lx),\qquad -1<x<1,
+\]
+preserves the norm and satisfies
+\(H_f(z)=\sqrt L\,H_g(Lz)\). Consequently the screen form on
+\((-L,L)\) is \(L\) times the screen form on \((-1,1)\) with
+parameter \(\epsilon=\beta L\). We work on \((-1,1)\) until
+scaling back at the end.
+
+The nonzero imaginary nodes occur in the pairs
+\(\pm i\epsilon t_j\), with an additional zero node if \(n\)
+is odd. Pairing the two imaginary nodes expresses their contribution
+as a positive cosine square plus a positive sine square. The real
+pair contributes
+\[
+ 2\left|\langle g,\cosh(\epsilon x)\rangle\right|^2
+       -2\left|\langle g,\sinh(\epsilon x)\rangle\right|^2.
+\]
+All features here are real. The even and odd subspaces are therefore
+orthogonal invariant subspaces. The even block is a sum of positive
+squares, including the constant square if there is a zero node. On
+the odd subspace the form is exactly
+\begin{equation}\label{scr:odd-block}
+ q_\epsilon(g)
+   =256\sum_{j=1}^r
+       |\langle g,\sin(\epsilon t_jx)\rangle|^2
+       -2|\langle g,\sinh(\epsilon x)\rangle|^2.
+\end{equation}
+
+For every \(\epsilon>0\), the \(r+1\) odd features in
+\eqref{scr:odd-block} are linearly independent. Indeed their entire
+continuations are combinations of exponentials with distinct
+exponents \(\pm i\epsilon t_j,\pm\epsilon\), and distinct
+exponentials are independent: differentiating an identically zero
+combination at zero through one less than the number of exponents
+gives an invertible Vandermonde system. The corresponding even
+features are independent by the same argument, adding exponent zero
+when necessary.
+
+For completeness, if \(\Phi\) is the synthesis map for finitely
+many independent features and \(J\) is their diagonal matrix of
+nonzero signed weights, then its operator is \(\Phi J\Phi^*\).
+Writing \(\Phi=ER\), where \(E\) is an isometry onto its range
+and \(R\) is invertible, shows that its nonzero inertia is that
+of \(RJR^*\), hence that of \(J\). Applied to the odd block
+this gives \(r\) positive eigenvalues and one negative eigenvalue.
+The even block has \(r+1\) positive eigenvalues for even \(n\),
+and \(r+2\) for odd \(n\). Thus the full screen has rank \(n+2\),
+positive inertia \(n+1\), negative inertia one, and an
+infinite-dimensional nullspace.
+
+\subsection{The signed moment matrix and its Schur complement}
+
+Write \(d_k=2k+1\) for \(0\le k\le r\). The feature series are
+\[
+ \sin(\epsilon t_jx)
+  =\sum_{k\ge0}(-1)^kt_j^{2k+1}
+             \frac{\epsilon^{2k+1}x^{2k+1}}{(2k+1)!},
+ \qquad
+ \sinh(\epsilon x)
+  =\sum_{k\ge0}
+             \frac{\epsilon^{2k+1}x^{2k+1}}{(2k+1)!}.
+\]
+Define the real \((r+1)\)-square matrix \(F\), with columns
+indexed by \(0,\ldots,r\), by
+\[
+ F_{j,k}=(-1)^kt_j^{2k+1}\quad(1\le j\le r),\qquad
+ F_{r+1,k}=1.
+\]
+Let \(J_s=\operatorname{diag}(256,\ldots,256,-2)\) and
+\(A=F^TJ_sF\). Its entries are
+\begin{equation}\label{scr:moment-matrix}
+ A_{k\ell}
+  =256(-1)^{k+\ell}\sum_{j=1}^r t_j^{2(k+\ell+1)}-2.
+\end{equation}
+Factoring \(t_j\) from the first \(r\) rows of \(F\) leaves
+the Vandermonde matrix at \(-t_1^2,\ldots,-t_r^2,1\).
+Thus \(F\) is invertible and \(A\) has inertia \((r,1)\).
+
+For \(r\ge1\), let
+\[
+ V_{j,k}=(-1)^kt_j^{2k+1}
+       \quad(1\le j\le r,\ 0\le k<r),\qquad
+ B=V^TV,\qquad {\bf1}=(1,\ldots,1)^T.
+\]
+The matrix \(V\) is invertible by the same Vandermonde argument,
+so \(B\) is positive definite. The leading \(r\)-square block
+of \(A\) is
+\[
+ A_{<r}=256B-2{\bf1}{\bf1}^T,
+\]
+and it is positive definite precisely when
+\({\bf1}^TB^{-1}{\bf1}<128\). We next verify that
+\[
+ {\bf1}^TB^{-1}{\bf1}=\kappa_n.
+\]
+
+For an odd polynomial of degree at most \(2r-1\), write
+\[
+ R(t)=\sum_{k=0}^{r-1}a_kT_{2k+1}(t/n).
+\]
+Discrete Chebyshev orthogonality on the original \(n\) nodes
+gives
+\[
+ \sum_{j=1}^r|R(t_j)|^2=\frac n4\sum_{k=0}^{r-1}|a_k|^2.
+\]
+To see the normalization, every nonconstant Chebyshev polynomial
+of degree less than \(n\) has discrete squared norm \(n/2\)
+on all \(n\) nodes, with distinct degrees orthogonal, and pairing
+the positive and negative nodes halves the squared norm of an odd
+polynomial. A possible zero node contributes nothing.
+Explicitly, with \(\theta_j=(2j-1)\pi/(2n)\), the finite geometric
+sum gives \(\sum_{j=1}^n\cos(q\theta_j)=0\) for
+\(1\le q\le2n-1\). Applying
+\(2\cos u\cos v=\cos(u-v)+\cos(u+v)\) proves the claimed
+orthogonality and normalization, since \(T_k(\cos\theta)=\cos(k\theta)\).
+Also,
+\[
+ T_{2k+1}(i/n)=i(-1)^k\sinh((2k+1)\alpha_n).
+\]
+The squared norm of evaluation \(R\mapsto R(i)\), for the
+positive-node norm, is therefore the first expression in
+\eqref{scr:kappa}. In the alternative basis
+\(R(t)=\sum_{k<r}c_k(-1)^kt^{2k+1}\), its squared node norm
+is \(c^*Bc\) and \(R(i)=i{\bf1}^Tc\). The squared norm of the
+same functional is \({\bf1}^TB^{-1}{\bf1}\), as required.
+Summing \(2\sinh^2 v=\cosh(2v)-1\) in a finite geometric
+progression gives the second expression in \eqref{scr:kappa}.
+Because \(\alpha_n\le1/n\), \(2r\le n\), and
+\((2r-1)\alpha_n<1\) when \(r\ge1\),
+\[
+ 0\le\kappa_n<\frac{4r}{n}\sinh^2(1)
+       \le2\sinh^2(1)<2e^2<16<128.
+\]
+For \(r=0\), the same conclusion holds with \(\kappa_1=0\).
+This proves positive definiteness of every leading moment block
+before the last one.
+
+To compute the last Schur complement, put
+\[
+ a(s)=\prod_{j=1}^r(s+t_j^2)=\sum_{k=0}^r a_ks^k,
+ \qquad a_r=1.
+\]
+Then
+\[
+ \sum_{k=0}^r a_k(-1)^kt_j^{2k+1}=0,\qquad
+ \sum_{k=0}^r a_k=P_n.
+\]
+If \(c=-a_{<r}\), the last column of the positive-feature
+matrix is \(Vc\). In the quadratic form of \(A\), replace
+\((x,z)\in\R^r\times\R\) by \(y=x+cz\). Its value becomes
+\[
+ 256y^TBy-2({\bf1}^Ty+P_nz)^2.
+\]
+The minimum over \(y\), with \(z\) fixed, has coefficient
+\begin{align*}
+ \sigma_n
+ &=-2P_n^2
+     -4P_n^2{\bf1}^T(256B-2{\bf1}{\bf1}^T)^{-1}{\bf1}\\
+ &=-\frac{2P_n^2}{1-\kappa_n/128}<0.
+\end{align*}
+For the second equality, solving the rank-one perturbation gives
+\[
+ (256B-2{\bf1}{\bf1}^T)^{-1}{\bf1}
+     =\frac{B^{-1}{\bf1}}{256(1-\kappa_n/128)}.
+\]
+Thus
+\begin{equation}\label{scr:schur}
+ \operatorname{Schur}(A\,|\,A_{<r})
+       =\sigma_n=-\frac{2P_n^2}{1-\kappa_n/128}.
+\end{equation}
+When \(r=0\), this means simply \(A=(-2)\).
+
+The product formula \eqref{scr:product} is also explicit.
+For even \(n=2r\), factor
+\[
+ T_n(z)=2^{n-1}\prod_{j=1}^r
+                    \bigl(z^2-(t_j/n)^2\bigr)
+\]
+and evaluate at \(z=i/n\), using
+\(T_n(i/n)=(-1)^r\cosh(n\alpha_n)\).
+For odd \(n=2r+1\), the corresponding factorization has the
+additional factor \(z\), and
+\(T_n(i/n)=i(-1)^r\sinh(n\alpha_n)\). These two evaluations
+give \eqref{scr:product}, including \(n=1\).
+
+\subsection{A nonsingular feature basis and the eigenvalue expansion}
+
+Let \(\phi(\epsilon)\) be the column vector of the \(r\) sine
+features followed by \(\sinh(\epsilon x)\), and put
+\[
+ D_\epsilon=\operatorname{diag}_{0\le k\le r}
+                   \frac{\epsilon^{d_k}}{d_k!},\qquad
+ \psi(\epsilon)=D_\epsilon^{-1}F^{-1}\phi(\epsilon).
+\]
+The apparent singularity at zero is removable. In fact the first
+\(r+1\) odd Taylor coefficients of \(F^{-1}\phi\) vanish
+except at their selected component. The remaining series converge
+in \(L^2(-1,1)\), and show
+\begin{equation}\label{scr:confluent-features}
+ \psi_k(\epsilon,x)
+      =x^{d_k}+O_{n,L^2}(\epsilon^{2(r+1-k)}).
+\end{equation}
+Each component extends analytically in the real parameter
+\(\epsilon^2\) through zero. If \(\Psi_\epsilon\) denotes
+synthesis from these columns, the identity
+\(\phi=FD_\epsilon\psi\) gives the exact odd-block operator
+\begin{equation}\label{scr:operator-factor}
+ \Psi_\epsilon D_\epsilon A D_\epsilon\Psi_\epsilon^*.
+\end{equation}
+
+Apply Gram--Schmidt to the columns of \(\Psi_\epsilon\) in
+increasing degree:
+\[
+ \Psi_\epsilon=E_\epsilon R_\epsilon.
+\]
+Here \(E_\epsilon\) has orthonormal columns, and
+\(R_\epsilon\) is upper triangular with positive diagonal.
+The limiting columns are independent odd monomials. The finitely
+many limiting squared Gram--Schmidt norms are therefore positive;
+the subtraction, division, and positive square-root operations
+show that \(E_\epsilon\) and \(R_\epsilon\) are analytic in
+\(\epsilon^2\) near zero.
+
+Let \(p_j\) be the monic Legendre polynomial of degree \(j\)
+on \((-1,1)\). The usual degree-\(j\) Legendre polynomial has
+leading coefficient \((2j)!/(2^j(j!)^2)\) and squared norm
+\(2/(2j+1)\). Dividing by the square of this leading coefficient
+gives \(\norm{p_j}_2^2=h_j\) in
+\eqref{scr:legendre-norm}. Gram--Schmidt on the odd monomials
+consequently gives
+\[
+ (R_0)_{kk}=\sqrt{h_{d_k}},\qquad
+ (E_0)_k=p_{d_k}/\sqrt{h_{d_k}}.
+\]
+
+Set \(V_\epsilon=D_\epsilon^{-1}R_\epsilon D_\epsilon\).
+For \(j<k\), its \((j,k)\) entry is that of \(R_\epsilon\)
+times \(\epsilon^{2(k-j)}d_j!/d_k!\); entries below the
+diagonal vanish. Therefore
+\[
+ V_\epsilon=
+   \operatorname{diag}(\sqrt{h_{d_0}},\ldots,\sqrt{h_{d_r}})
+       +O_n(\epsilon^2).
+\]
+In the orthonormal coordinates \(E_\epsilon\), the operator
+\eqref{scr:operator-factor} becomes
+\begin{equation}\label{scr:scaled-matrix}
+ M_\epsilon=D_\epsilon C_\epsilon D_\epsilon,\qquad
+ C_\epsilon=V_\epsilon A V_\epsilon^T
+   =\operatorname{diag}(\sqrt{h_{d_k}})\,
+       A\,\operatorname{diag}(\sqrt{h_{d_k}})
+           +O_n(\epsilon^2).
+\end{equation}
+All errors here concern fixed finite matrices at fixed \(n\).
+
+For \(r\ge1\), write
+\[
+ M_\epsilon=
+   \begin{pmatrix}B_\epsilon&u_\epsilon\\
+                   u_\epsilon^T&a_\epsilon\end{pmatrix},
+ \qquad
+ S_\epsilon=a_\epsilon-u_\epsilon^TB_\epsilon^{-1}u_\epsilon.
+\]
+The leading block of \(C_\epsilon\), and hence \(B_\epsilon\),
+is positive definite for small positive \(\epsilon\).
+Taking the Schur complement in \eqref{scr:scaled-matrix} and
+using \eqref{scr:schur} gives
+\begin{equation}\label{scr:scaled-schur}
+ S_\epsilon=
+   \frac{\epsilon^{2d}}{(d!)^2}
+          \{h_d\sigma_n+O_n(\epsilon^2)\}<0.
+\end{equation}
+Indeed diagonal scaling factors out the final diagonal square,
+and the Schur complement of the limiting \(C_\epsilon\)
+is \(h_d\sigma_n\).
+
+Also
+\begin{equation}\label{scr:small-elimination}
+ B_\epsilon^{-1}u_\epsilon=O_n(\epsilon^2).
+\end{equation}
+To verify this, write \(D_<\) for the leading diagonal block of
+\(D_\epsilon\) and \(c_<\) for the upper part of the last
+column of \(C_\epsilon\). The vector in question is
+\[
+ D_<^{-1}(C_{\epsilon,<})^{-1}c_<
+                  \frac{\epsilon^d}{d!}.
+\]
+The middle factors are uniformly bounded. Its coordinate with
+index \(k<r\) is thus \(O_n(\epsilon^{d-d_k})\), and
+\(d-d_k\ge2\).
+
+Completing the square yields
+\[
+ (x,z)^TM_\epsilon(x,z)=
+ (x+B_\epsilon^{-1}u_\epsilon z)^TB_\epsilon
+       (x+B_\epsilon^{-1}u_\epsilon z)+S_\epsilon z^2.
+\]
+Since \(S_\epsilon<0\), this is bounded below by
+\(S_\epsilon(\norm x^2+|z|^2)\). Taking
+\(x=-B_\epsilon^{-1}u_\epsilon z\) gives the other Rayleigh
+bound. Thus the least eigenvalue \(\lambda_-(\epsilon)\) obeys
+\[
+ S_\epsilon\le\lambda_-(\epsilon)\le
+    \frac{S_\epsilon}
+           {1+\norm{B_\epsilon^{-1}u_\epsilon}^2}
+       =S_\epsilon\bigl(1+O_n(\epsilon^4)\bigr).
+\]
+For \(r=0\), the matrix is scalar and
+\eqref{scr:scaled-schur} gives its eigenvalue directly.
+Combining these estimates with \eqref{scr:schur} proves
+\[
+ \lambda_-(\epsilon)
+  =-c_n\epsilon^{2d}\bigl(1+O_n(\epsilon^2)\bigr).
+\]
+Unitary scaling proves \eqref{scr:eigenvalue}.
+
+The eigenfunction limit also follows from these bounds. The matrix is
+real symmetric and its negative eigenvalue is simple, so a real
+normalized negative eigenvector may be chosen. For \(r\ge1\),
+such an eigenvector \((x,z)\)
+satisfies
+\[
+ x=-(B_\epsilon-\lambda_-(\epsilon)I)^{-1}u_\epsilon z.
+\]
+Because \(B_\epsilon\) is positive definite and
+\(\lambda_-(\epsilon)<0\), the operator
+\((I-\lambda_-(\epsilon)B_\epsilon^{-1})^{-1}\)
+has norm at most one. Equation \eqref{scr:small-elimination}
+therefore gives \(x=O_n(\epsilon^2)|z|\).
+After choosing the sign, \(z\to1\), and the limiting eigenfunction
+is the last column of \(E_0\), namely \(p_d/\sqrt{h_d}\).
+The same conclusion is immediate when \(r=0\).
+All nonzero eigenvalues are captured by these finite coordinates.
+Density of \(C_c^\infty((-L,L))\) in \(L^2(-L,L)\), and
+boundedness of the finite-screen operator, show that its Rayleigh
+infimum on the compact smooth class is the same negative eigenvalue.
+In particular, with \(n\) fixed, the exact negative envelope is
+\begin{equation}\label{scr:envelope}
+ e_{n,\beta}(L):=\cM_{\mathcal S_{n,\beta}}(L)
+ =-\mu_-(n,\beta,L)
+ =c_n\beta^{2d}L^{2d+1}\bigl(1+O_n((\beta L)^2)\bigr)
+ \quad(\beta L\longrightarrow0).
+\end{equation}
+For every positive \(\beta,L\) it is finite and strictly positive.
+It is nondecreasing in \(L\), since the compact smooth test classes
+increase with the window. The supremum need not be attained by a
+compact smooth test, but such unit tests approach it arbitrarily closely.
+For even \(n\), the degree is \(d=n+1\), so the powers in
+\eqref{scr:envelope} are \(2n+2\) and \(2n+3\), respectively.
+
+For reference, the first coefficients are
+\begin{equation}\label{scr:first-coefficients}
+ c_1=\frac43,\qquad
+ c_2=\frac{1024}{44625},\qquad
+ c_3=\frac{23064}{151025}.
+\end{equation}
+For \(n=1\) the odd block is rank one and its negative eigenvalue
+is exactly
+\[
+ 2L-\frac{\sinh(2\beta L)}{\beta}
+      =-\frac43\beta^2L^3+O(\beta^4L^5).
+\]
+For \(n=2\), \(t_1^2=2\), \(P_2=3\), and \(\kappa_2=1/2\).
+For \(n=3\), \(t_1^2=27/4\), \(P_3=31/4\), and
+\(\kappa_3=4/27\). Substitution in \eqref{scr:coefficient}
+gives the remaining values in \eqref{scr:first-coefficients}.
+
+\subsection{Smooth finite-dimensional recovery of the coefficient}
+
+To add a possibly unbounded positive axis form, we use tests from
+a fixed finite-dimensional smooth space rather than approximating
+an eigenfunction in the graph norm of that axis form.
+Let
+\[
+ \mathcal V=\operatorname{span}\{x,x^3,\ldots,x^d\}
+                     \subset L^2_{\rm odd}(-1,1).
+\]
+Choose even cutoffs \(\chi_\delta\in C_c^\infty((-1,1))\),
+with \(0\le\chi_\delta\le1\), tending pointwise to one as
+\(\delta\to0^+\), and put
+\(\mathcal H_\delta=\chi_\delta\mathcal V\).
+For sufficiently small \(\delta\), these spaces have dimension
+\(r+1\). Indeed their basis vectors converge in \(L^2\) to
+the independent monomials. If \(P_\delta\) denotes orthogonal
+projection onto \(\mathcal H_\delta\), best approximation gives
+\begin{equation}\label{scr:projected-moments}
+ \norm{P_\delta x^{d_k}-x^{d_k}}_2
+ \le\norm{\chi_\delta x^{d_k}-x^{d_k}}_2\longrightarrow0,
+ \qquad 0\le k\le r.
+\end{equation}
+The projected moment vectors are consequently independent for
+small \(\delta\).
+
+Fix one such space \(\mathcal H=\mathcal H_\delta\), and let
+\(P_{\mathcal H}\) be its projection. Compress
+\eqref{scr:odd-block} to \(\mathcal H\). Its feature vectors
+are \(P_{\mathcal H}\phi_j(\epsilon)\), and the exact
+factorization \eqref{scr:operator-factor} holds with
+\(\Psi_\epsilon\) replaced by \(P_{\mathcal H}\Psi_\epsilon\).
+Their nonsingular limiting columns are
+\(P_{\mathcal H}x^{d_k}\), by \eqref{scr:confluent-features}.
+Gram--Schmidt on these columns gives a positive diagonal
+\(\sqrt{h_{k,\mathcal H}}\), where \(h_{k,\mathcal H}\)
+is the squared distance of \(P_{\mathcal H}x^{d_k}\) from the
+span of the earlier projected moments. The triangular scaling
+used in \eqref{scr:scaled-matrix} therefore gives, explicitly,
+\[
+ C_{\epsilon,\mathcal H}
+    =\operatorname{diag}(\sqrt{h_{k,\mathcal H}})\,
+          A\,\operatorname{diag}(\sqrt{h_{k,\mathcal H}})
+                  +O_{n,\mathcal H}(\epsilon^2).
+\]
+Its leading \(r\)-square block is positive definite, and its
+last Schur complement is
+\(h_{r,\mathcal H}\sigma_n+O_{n,\mathcal H}(\epsilon^2)\).
+The same diagonal powers yield
+\(B_{\epsilon,\mathcal H}^{-1}u_{\epsilon,\mathcal H}
+=O_{n,\mathcal H}(\epsilon^2)\); the completing-square
+Rayleigh bounds above apply without change. The compressed
+operator thus has exactly one negative eigenvalue for small
+\(\epsilon>0\), equal to
+\begin{equation}\label{scr:compressed-eigenvalue}
+ -c_n(\mathcal H)\epsilon^{2d}
+               \bigl(1+O_{n,\mathcal H}(\epsilon^2)\bigr),
+ \qquad
+ c_n(\mathcal H)=
+   \frac{2P_n^2\rho_{\mathcal H}}
+                  {(d!)^2(1-\kappa_n/128)},
+\end{equation}
+where
+\begin{equation}\label{scr:projected-distance}
+ \rho_{\mathcal H}
+   =\operatorname{dist}_{L^2}^2
+        \left(P_{\mathcal H}x^d,\
+          \operatorname{span}\{P_{\mathcal H}x,\ldots,
+                               P_{\mathcal H}x^{d-2}\}\right)>0.
+\end{equation}
+For \(r=0\), the span in this expression is \(\{0\}\).
+
+Equation \eqref{scr:projected-moments} implies entrywise
+convergence of the finite moment Gram matrices to their positive
+definite unprojected Gram matrix. In the distance formula, the
+inverse of the leading Gram block is therefore continuous, with
+the scalar interpretation when \(r=0\). It follows that
+\begin{equation}\label{scr:coefficient-recovery}
+ \rho_{\mathcal H_\delta}\longrightarrow h_d,\qquad
+ c_n(\mathcal H_\delta)\longrightarrow c_n.
+\end{equation}
+Moreover \(\rho_{\mathcal H}\le h_d\): project the unprojected
+minimizing residual \(p_d\), use it as an admissible residual in
+\eqref{scr:projected-distance}, and use the contractivity of
+orthogonal projection. Thus \(0<c_n(\mathcal H)\le c_n\).
+
+Every vector in the fixed space \(\mathcal H\) has support in
+the same compact subinterval of \((-1,1)\). All norms on this
+finite-dimensional space are equivalent. Consequently, for every
+integer \(N\ge1\), integration by parts \(N\) times, without
+boundary terms, gives a finite constant \(C_{\mathcal H,N}\)
+such that
+\begin{equation}\label{scr:smooth-decay}
+ |H_g(it)|\le C_{\mathcal H,N}|t|^{-N}\norm g_2
+       \quad(t\ne0,\ g\in\mathcal H).
+\end{equation}
+In particular, this bound is uniform over any choice of normalized
+negative eigenvectors of the compressed screen. Uniformity as
+\(\delta\to0\) is neither needed nor asserted.
+
+\subsection{The fixed axis background vanishes on the scaled tests}
+
+Local finiteness of \(\mathcal A\) implies that its nonzero
+ordinate magnitudes are bounded away from zero. Choose an integer
+\(N\ge1\) with \(2N>\max\{m_{\mathcal A},1\}\). Then
+\begin{equation}\label{scr:inverse-moment}
+ S_{\mathcal A,N}
+    =\sum_{\substack{i\gamma\in\mathcal A\\\gamma\ne0}}
+            \nu_{\mathcal A}(i\gamma)|\gamma|^{-2N}<\infty.
+\end{equation}
+Indeed the finitely many nonzero ordinates of magnitude at most
+one give a finite sum. On \(2^j<|\gamma|\le2^{j+1}\),
+\eqref{scr:background-count} bounds the remaining contribution
+by a constant times \(2^{j(m_{\mathcal A}-2N)}\);
+the resulting geometric series converges. If there are no
+nonzero ordinates, the sum in \eqref{scr:inverse-moment} is zero.
+
+For a unit vector \(g\in\mathcal H\) define
+\[
+ f_L(u)=L^{-1/2}g(u/L).
+\]
+This is a unit compact smooth test with support strictly inside
+\((-L,L)\), and
+\[
+ H_{f_L}(i\gamma)=\sqrt L\,H_g(iL\gamma).
+\]
+Oddness gives \(H_{f_L}(0)=0\), so any multiplicity at the
+origin contributes nothing. Equations \eqref{scr:smooth-decay}
+and \eqref{scr:inverse-moment} give the uniform bound
+\begin{equation}\label{scr:background-vanishing}
+ 0\le Q_{\mathcal A}(f_L,f_L)
+   \le C_{\mathcal H,N}^2S_{\mathcal A,N}L^{1-2N}
+      \longrightarrow0\qquad(L\longrightarrow\infty).
+\end{equation}
+No boundedness of the axis form on the full \(L^2\) space is
+being assumed.
+
+We can now prove \eqref{scr:transition}. Axis positivity and
+the finite-screen eigenvalue imply
+\begin{equation}\label{scr:margin-upper}
+ 0\le\cM_{Z_\beta}(L)\le-\mu_-(n,\beta,L).
+\end{equation}
+This in particular proves finiteness of \(\cM_{Z_\beta}(L)\),
+even if the positive axis form is unbounded on \(L^2(-L,L)\).
+At \(L=x\beta^{-q_n}\),
+\[
+ \epsilon=\beta L=x\beta^{1/(2d+1)},\qquad
+ L\epsilon^{2d}=x^{2d+1}.
+\]
+For any compact interval \(I\subset(0,\infty)\),
+\eqref{scr:eigenvalue} and \eqref{scr:margin-upper} therefore
+give
+\begin{equation}\label{scr:transition-upper}
+ \cM_{Z_\beta}(x\beta^{-q_n})
+    \le c_nx^{2d+1}+O_{n,I}(\beta^{2/(2d+1)})
+       \quad(x\in I).
+\end{equation}
+
+For the reverse bound, take \(g=g_{\epsilon,\mathcal H}\) to
+be any normalized negative eigenvector of the compressed screen.
+Its scaled test has, by \eqref{scr:compressed-eigenvalue},
+\[
+ Q_{\mathcal S_{n,\beta}}(f_L,f_L)
+   =-c_n(\mathcal H)x^{2d+1}
+           +O_{n,\mathcal H,I}(\beta^{2/(2d+1)}).
+\]
+On \(I\), the right side of \eqref{scr:background-vanishing}
+is uniformly \(O_{\mathcal H,\mathcal A,I}
+(\beta^{q_n(2N-1)})\). Hence
+\begin{equation}\label{scr:transition-lower}
+ \cM_{Z_\beta}(x\beta^{-q_n})
+   \ge c_n(\mathcal H)x^{2d+1}
+                -o_{n,\mathcal H,\mathcal A,I}(1)
+       \quad(x\in I).
+\end{equation}
+Given an error tolerance, first choose \(\mathcal H_\delta\)
+so that \((c_n-c_n(\mathcal H_\delta))
+\max_{x\in I}x^{2d+1}\) is smaller than that tolerance,
+using \eqref{scr:coefficient-recovery}. With this smooth space
+fixed, let \(\beta\to0\) in \eqref{scr:transition-upper}
+and \eqref{scr:transition-lower}. This proves the locally
+uniform limit \eqref{scr:transition}. The order of the two
+limits avoids any assertion of uniform derivative bounds as
+the cutoffs approach the endpoints.
+
+\subsection{Inversion to the first prescribed-margin radius}
+
+The test classes increase with \(L\), so
+\(\cM_{Z_\beta}(L)\) is nondecreasing. Put
+\[
+ x_\eta=(\eta/c_n)^{1/(2d+1)}.
+\]
+For any \(0<x_-<x_\eta<x_+\), \eqref{scr:transition}
+implies, for sufficiently small \(\beta\),
+\[
+ \cM_{Z_\beta}(x_-\beta^{-q_n})<\eta,\qquad
+ \cM_{Z_\beta}(x_+\beta^{-q_n})>\eta.
+\]
+The first inequality, together with monotonicity, excludes the
+requested margin at every radius at most \(x_-\beta^{-q_n}\).
+The second supplies an actual smooth test with margin strictly
+greater than \(\eta\): a supremum strictly above \(\eta\)
+must have a member above \(\eta\). In particular the defining
+set for \(L_\eta(\beta)\) is nonempty for small \(\beta\),
+and
+\[
+ x_-\le\beta^{q_n}L_\eta(\beta)\le x_+.
+\]
+Let \(x_-\uparrow x_\eta\) and \(x_+\downarrow x_\eta\).
+This proves \eqref{scr:first-radius} for both strict and
+non-strict definitions, without an attainment assumption.
+
+For \(n=1\), the formula reads
+\[
+ L_\eta(\beta)\sim(3\eta/4)^{1/3}\beta^{-2/3}.
+\]
+For \(n=2\) and \(n=3\), the exponent is \(6/7\), with the
+different constants in \eqref{scr:first-coefficients}.
+In general the radius exponent is \(2n/(2n+1)\) for odd
+\(n\), and \((2n+2)/(2n+3)\) for even \(n\).
+
+The fixed-background conclusion includes every fixed axis divisor
+satisfying \eqref{scr:background-count}. It does not
+include backgrounds whose locations or multiplicities vary with
+\(\beta\). Likewise the
+fixed-\(n\) expansion \eqref{scr:eigenvalue} supplies no error
+bound uniform in a growing screen size. The result here is the
+exact prescribed-margin transition for a fixed configuration,
+not an assertion uniform in a growing count budget.

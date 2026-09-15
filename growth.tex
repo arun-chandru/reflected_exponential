@@ -1,0 +1,290 @@
+\section{Amplification and growth for one fixed divisor}
+\label{sec:growth}
+
+We now keep the entire divisor fixed while the support window grows.
+Assume that \(Z\) is reflected, lies in \(|\Re z|\le a\), has
+positive integer multiplicities, and satisfies
+\begin{equation}\label{grow:count}
+ N_0(Y)\le C(1+Y)^m\qquad(Y\ge0),
+ \qquad C\ge1,\quad m\ge0.
+\end{equation}
+Suppose that its off-axis part is nonempty, and put
+\begin{equation}\label{grow:definitions}
+ s_Z=\sup\{\Re z:z\in Z,\ \Re z>0\},\qquad
+ \cM_Z(L)=\sup_{0\ne f\in C_c^\infty((-L,L))}
+       \left(-\frac{Q_Z(f,f)}{\norm f_2^2}\right)_+.
+\end{equation}
+Thus \(0<s_Z\le a\). The envelope is allowed to be infinite;
+we interpret \(\log0=-\infty\) and \(\log(+\infty)=+\infty\).
+The count hypothesis alone gives the lower rate
+\begin{equation}\label{grow:lower-rate}
+ \liminf_{L\to\infty}\frac{\log\cM_Z(L)}L\ge2s_Z.
+\end{equation}
+We first prove this assertion by retaining the free annihilation radius
+in the support--margin construction. We then give a weighted local
+condition under which the envelope is finite on every window and the
+lower rate is exact. No arithmetic information is used in this section.
+
+\subsection{Fixed-target amplification with arbitrarily small relative support loss}
+
+First suppose that a target has been centered at the real pair
+\(\pm\beta\), with \(0<\beta\le1\). Denote the centered divisor
+by \(W\), and fix an annihilation radius \(R\ge16(a+2)\).
+Apply the construction of \eqref{frontier:master} with
+\(\ell=1/\beta\) and \(\tau=\beta T\), where \(T\) tends to
+infinity. In particular \(\beta\ell=1\), and \(\tau\ge1\)
+once \(T\ge1/\beta\). All counting budgets and all constants
+attached to this fixed \(R\) are fixed before \(T\) increases.
+The exponent estimate \eqref{frontier:K} has the form
+\begin{equation}\label{grow:fixed-radius-K}
+ K\le a(T+\ell)+(M-1)
+       \{\log(1/\beta)+\log(1+\beta T)\}+J_R,
+\end{equation}
+where \(M\) is a fixed finite low-node budget and \(J_R\) is
+independent of \(T\). The exact support estimate
+\eqref{frontier:support-exact} consequently gives
+\begin{equation}\label{grow:fixed-radius-support}
+ L_T\le\ell+T+4K/R
+ \le (1+4a/R)T+A_R\log(2+T)+B_R.
+\end{equation}
+Here and below the finite constants may depend on the fixed target,
+the strip, the count, and \(R\). This is not a uniform estimate
+over target heights or over growing values of \(R\).
+
+We spell out why the same construction gives a normalized, rather
+than merely unnormalized, exponential gain. Its local target values
+before translation are \(\sqrt\ell\) and \(-\sqrt\ell\).
+Multiplication by \(\cosh(Tw)\) is the average of translations by
+\(T\) and \(-T\), so it does not increase the \(L^2\) norm.
+The chosen interpolation components have imaginary width
+\(O((\ell+T)^{-1})\). Thus every selected reflected pair retains
+a negative contribution after translation, while all intermediate
+nodes vanish. The absolute tail is at most \(\ell/2\). In
+particular the actual target, of multiplicity at least one, yields
+\begin{equation}\label{grow:fixed-radius-raw}
+ Q_W(f_T,f_T)\le-2\ell\cosh^2(\beta T)+\ell/2
+                 \le-\frac\ell4 e^{2\beta T}.
+\end{equation}
+These are the sign and tail conclusions of
+\eqref{frontier:master}; they do not follow from translating an
+arbitrary previously negative test.
+
+The physical-coordinate norm estimate in that construction is
+\begin{equation}\label{grow:fixed-radius-norm}
+ \norm{f_T}_2^2
+ \le D_R(1+\beta T)^{2M-2}
+             \exp\left(\frac{D_R\beta^2K}{(1+\beta T)^2}\right).
+\end{equation}
+The constant in the exponent can be enlarged to the same symbol
+\(D_R\). Equation \eqref{grow:fixed-radius-K} shows that this
+exponent remains bounded as \(T\to\infty\), and in fact tends
+to zero for a fixed target. Combining
+\eqref{grow:fixed-radius-raw} and \eqref{grow:fixed-radius-norm}
+therefore gives a nonzero compact smooth test for each sufficiently
+large \(T\), with
+\begin{equation}\label{grow:fixed-radius-margin}
+ -\frac{Q_W(f_T,f_T)}{\norm{f_T}_2^2}
+       \ge c_R\frac{e^{2\beta T}}{(1+T)^{2M-2}},
+ \qquad c_R>0.
+\end{equation}
+Its support is strictly inside the interval with radius bounded in
+\eqref{grow:fixed-radius-support}, because the initial smoothing
+function has support strictly inside its prescribed interval.
+
+Fix \(0<\delta<1\) and, for each requested radius \(L\), set
+\[
+ T=\frac{(1-\delta)L}{1+4a/R}.
+\]
+For every sufficiently large \(L\), the logarithmic error in
+\eqref{grow:fixed-radius-support} is less than \(\delta L\),
+and \(T\ge1/\beta\). The constructed test then lies in
+\(C_c^\infty((-L,L))\). Equation
+\eqref{grow:fixed-radius-margin} implies
+\[
+ \liminf_{L\to\infty}\frac{\log\cM_W(L)}L
+       \ge\frac{2\beta(1-\delta)}{1+4a/R}.
+\]
+First let \(\delta\downarrow0\), and then let the fixed radius
+\(R\) increase without bound. This proves a lower rate
+\(2\beta\). The order of limits matters: no control of
+\(A_R,B_R,c_R,D_R,J_R\) as \(R\to\infty\) has been asserted
+or used. The construction supplies tests on every sufficiently
+large window, not just a subsequence.
+
+For a target \(\beta+i\gamma\) in \(Z\), centering changes the
+count only to
+\begin{equation}\label{grow:shifted-count}
+ N_\gamma(Y)\le C(1+|\gamma|+Y)^m
+       \le C(1+|\gamma|)^m(1+Y)^m.
+\end{equation}
+If \(W=Z-i\gamma\) and \(f(u)=e^{-i\gamma u}g(u)\), then
+\(H_f(z)=H_g(z-i\gamma)\), so
+\(Q_Z(f,f)=Q_W(g,g)\), with the same norm and support. Hence
+the preceding conclusion applies at any fixed height.
+
+The restriction \(\beta\le1\) is immaterial for the growth
+statement. For \(\alpha=\max\{a,1\}\), let
+\(\widetilde Z=\{z/\alpha:z\in Z\}\), retaining multiplicities.
+Its strip width is at most one and its count is bounded by
+\(C\alpha^m(1+Y)^m\). If
+\(f(u)=\sqrt\alpha\,g(\alpha u)\), direct substitution gives
+\begin{equation}\label{grow:dilation}
+ \norm f_2=\norm g_2,\qquad
+ H_f(z)=\alpha^{-1/2}H_g(z/\alpha),\qquad
+ Q_Z(f,f)=\alpha^{-1}Q_{\widetilde Z}(g,g).
+\end{equation}
+A radius \(\alpha L\) for \(g\) becomes radius \(L\) for
+\(f\); the inverse scaling gives the exact envelope relation
+\(\cM_Z(L)=\alpha^{-1}\cM_{\widetilde Z}(\alpha L)\).
+Thus the lower rate for a target of displacement
+\(\beta/\alpha\) scales back to \(2\beta\).
+
+We have proved the lower rate for every fixed off-axis target.
+Taking their supremum proves \eqref{grow:lower-rate}, even when
+\(s_Z\) is not attained. In particular \(\cM_Z(L)>0\) for
+every sufficiently large \(L\), and it tends to infinity.
+For any finite requested margin, a supremum strictly greater than
+that margin contains an actual compact smooth test above it. Thus
+all finite margins are attained as inequalities on some finite
+window, without an eigenfunction-attainment assumption.
+
+\subsection{A weighted local condition sufficient for a finite envelope}
+
+Use one positive-real representative of each reflected pair, and assume
+\begin{equation}\label{grow:weighted-density}
+ B_Z:=\sup_{y\in\R}
+ \sum_{\substack{z=\sigma+i\gamma\in Z\\
+                  \sigma>0,\ |\gamma-y|\le1}}
+          \nu(z)\sigma^2<\infty.
+\end{equation}
+This condition permits infinitely many off-axis pairs, unbounded
+unweighted local counts when the displacements shrink, and arbitrarily
+close distinct locations. It holds for a finite off-axis part or a
+uniformly bounded unit-height count. The axis part requires no extra
+hypothesis beyond \eqref{grow:count}. We will prove, for every
+\(L>0\) and \(0<\varepsilon\le1\),
+\begin{equation}\label{grow:epsilon-upper}
+ \cM_Z(L)\le
+ 8B_Z(s_Z+\varepsilon)\varepsilon^{-2}L^2
+                   e^{2(s_Z+\varepsilon)L}.
+\end{equation}
+In particular, for \(L\ge1\),
+\begin{equation}\label{grow:upper}
+ \cM_Z(L)\le8e^2B_Z(s_Z+1)L^4e^{2s_ZL}.
+\end{equation}
+No optimality of the polynomial factor is asserted.
+
+Fix a compact smooth test \(f\) supported in \((-L,L)\), and set
+\[
+ A_z=\frac{H_f(\sigma+i\gamma)+H_f(-\sigma+i\gamma)}2,
+ \qquad
+ D_z=\frac{H_f(\sigma+i\gamma)-H_f(-\sigma+i\gamma)}2.
+\]
+The contribution of the pair is exactly
+\(2\nu(z)(|A_z|^2-|D_z|^2)\); every axis term is
+nonnegative. The entire function
+\[
+ G_f(w)=\int_\R u f(u)e^{wu}\,du
+\]
+satisfies
+\[
+ D_z=\frac\sigma2\int_0^1
+     \{G_f(t\sigma+i\gamma)+G_f(-t\sigma+i\gamma)\}\,dt.
+\]
+Cauchy--Schwarz on this average gives
+\begin{equation}\label{grow:pair-bound}
+ 2\nu(z)|D_z|^2\le\nu(z)\sigma^2\int_0^1
+       \{|G_f(t\sigma+i\gamma)|^2+
+          |G_f(-t\sigma+i\gamma)|^2\}\,dt.
+\end{equation}
+
+For fixed \(t\in[0,1]\), give each of \(t\sigma+i\gamma\)
+and \(-t\sigma+i\gamma\) the weight \(\nu(z)\sigma^2\), and
+denote the resulting measure by \(\mu_t\). At \(t=0\), both
+weights are retained even though their locations coincide. Its mass
+in any radius-one vertical band is at most \(2B_Z\). The area
+mean inequality for the subharmonic function \(|G|^2\) yields
+\begin{equation}\label{grow:area-mean}
+ \begin{split}
+ \int |G(w)|^2\,d\mu_t(w)
+ &\le\frac1{\pi\varepsilon^2}
+    \int\!\!\int_{|\zeta-w|<\varepsilon}
+               |G(\zeta)|^2\,dA(\zeta)\,d\mu_t(w)\\
+ &\le\frac{2B_Z}{\pi\varepsilon^2}
+    \int_{-s_Z-\varepsilon}^{s_Z+\varepsilon}
+    \int_\R |G(x+iy)|^2\,dy\,dx.
+ \end{split}
+\end{equation}
+Indeed, for a fixed area point \(x+iy\), all contributing centers
+have \(|\gamma-y|<\varepsilon\le1\); their total weight is at
+most \(2B_Z\). Their real parts lie in \([-s_Z,s_Z]\).
+Tonelli justifies the interchange of these nonnegative integrands,
+and no separation assumption enters the argument.
+
+For \(G=G_f\), Plancherel gives
+\[
+ \int_\R|G_f(x+iy)|^2\,dy
+   =2\pi\int_\R u^2|f(u)|^2e^{2xu}\,du
+   \le2\pi L^2e^{2|x|L}\norm f_2^2.
+\]
+Discard the positive terms of \(Q_Z\), sum
+\eqref{grow:pair-bound}, and apply \eqref{grow:area-mean}.
+The real integral has length \(2(s_Z+\varepsilon)\), and the
+\(t\)-integral has length one. This proves
+\eqref{grow:epsilon-upper} with its displayed constant.
+Taking \(\varepsilon=1/L\) proves \eqref{grow:upper}; taking
+\(\varepsilon=1\) proves finiteness also for smaller windows.
+The original form converges absolutely by \eqref{grow:count}.
+Only its nonnegative majorants were interchanged in the proof.
+There is no need to assert a bounded positive axis operator on the
+whole \(L^2\) window.
+
+\subsection{Exact exponential rate and the first prescribed-margin radius}
+
+Combining \eqref{grow:lower-rate} and \eqref{grow:upper} gives
+\begin{equation}\label{grow:exact-rate}
+ \lim_{L\to\infty}\frac{\log\cM_Z(L)}L=2s_Z
+ \qquad\text{if }B_Z<\infty.
+\end{equation}
+The logarithm is finite and ordinary for all sufficiently large
+\(L\): finiteness follows from the weighted bound and positivity
+from the target construction. Define the first radius using actual
+tests by
+\begin{equation}\label{grow:first-definition}
+ r_Z(\eta)=\inf\{L>0:\ \exists\,0\ne f\in
+ C_c^\infty((-L,L)),\quad Q_Z(f,f)\le-\eta\norm f_2^2\},
+ \qquad\eta>0.
+\end{equation}
+It is finite, and
+\begin{equation}\label{grow:first-asymptotic}
+ r_Z(\eta)\sim\frac{\log\eta}{2s_Z}
+                    \qquad(\eta\to\infty).
+\end{equation}
+Here the divisor, including all its multiplicities, is fixed.
+
+To justify inversion without attainment, fix \(0<\delta<2s_Z\).
+For all sufficiently large \(L\), the rate law implies
+\[
+ e^{(2s_Z-\delta)L}\le\cM_Z(L)
+                        \le e^{(2s_Z+\delta)L}.
+\]
+At a radius strictly below \(\log\eta/(2s_Z+\delta)\), the
+upper bound excludes a test of margin \(\eta\). Bounded smaller
+radii are excluded for large \(\eta\) by monotonicity and
+finiteness of the envelope. At a radius strictly above
+\(\log\eta/(2s_Z-\delta)\), the lower bound makes the supremum
+strictly exceed \(\eta\), hence gives an actual test with
+strictly larger margin. Let the bounding radii approach their
+endpoints and then let \(\delta\downarrow0\). This proves
+\eqref{grow:first-asymptotic}, also when a strict margin inequality
+is used in \eqref{grow:first-definition}.
+
+The weighted condition is sufficient for the matching upper rate;
+it is not asserted to be necessary for that rate. It does not
+characterize all locally semibounded divisors.
+The lower rate \eqref{grow:lower-rate} needs only the polynomial
+count, whereas a finite upper rate needs further control. In
+particular, local semiboundedness alone cannot be substituted for
+\eqref{grow:weighted-density}; the screened construction in
+Section~\ref{sec:arbitrary-growth} shows that fixed sparse counts can coexist with
+arbitrarily rapid growth of the finite negative envelope.

@@ -1,0 +1,392 @@
+\section{Arbitrary growth under fixed counting bounds}
+\label{sec:arbitrary-growth}
+
+Finiteness of the negative envelope in each compact window does not
+by itself impose an exponential growth rate. This remains the case
+under both reflection and conjugation symmetry, with fixed linear
+origin counts and a fixed logarithmic unit-height bound. The finite
+screen calculation supplies the separation between two support
+radii needed to construct such an example.
+
+More precisely, let \(G:[2,\infty)\to(0,\infty)\) be any
+finite-valued nondecreasing function. There exists a locally finite
+divisor \(Z\), with positive integer multiplicities, such that
+\begin{gather}
+ Z=-\overline Z=\overline Z=-Z,\qquad
+ |\Re z|\le1\quad(z\in Z),\qquad
+ [1]+[-1]\subset Z,\qquad s_Z=1,
+ \label{arb:symmetry}\\
+ N_0(Y)\le Y+2\quad(Y\ge0),\qquad
+ N_t(1)\le2+\log(2+|t|)\quad(t\in\mathbb R),
+ \label{arb:counts}\\
+ \cM_Z(L)<\infty\quad(0<L<\infty),\qquad
+ \cM_Z(L)\ge G(L)\quad(L\ge2).
+ \label{arb:conclusion}
+\end{gather}
+The symmetries and counts include multiplicity. Here \(s_Z\) is
+the supremum of the positive real parts, and
+\[
+ \cM_Z(L)=
+ \sup_{0\ne f\in C_c^\infty((-L,L);\mathbb C)}
+ \max\left\{0,-\frac{Q_Z(f,f)}{\|f\|_2^2}\right\}.
+\]
+The series defining \(Q_Z\) is absolutely convergent on this
+test class. For each \(L\ge2\), a negative witness can be
+chosen real-valued and either even or odd; no fixed choice of
+parity is asserted for all windows. The construction also gives
+\begin{equation}\label{arb:weighted-failure}
+ \sup_{y\in\mathbb R}
+ \sum_{\substack{z=\sigma+i\gamma\in Z\\
+                  \sigma>0,\ |\gamma-y|\le1}}
+       \nu(z)\sigma^2=\infty.
+\end{equation}
+No continuity, differentiability, or computability assumption on
+\(G\) is used. The conclusion is domination of \(G\), not an
+asymptotic formula for \(\cM_Z\).
+
+\subsection{Separating two radii with a finite screen}
+
+We use only the even values \(n\ge2\) of the finite screen
+\eqref{scr:screen-definition}, namely
+\[
+ \mathcal S_{n,\beta}
+ =128\sum_{\ell=1}^{n}
+   \left[i\beta n\cos\frac{(2\ell-1)\pi}{2n}\right]
+       +[\beta]+[-\beta],\qquad \beta>0.
+\]
+It has total multiplicity \(128n+2\) and is invariant under
+both conjugation and reflection. Write
+\(e_{n,\beta}(L)=\cM_{\mathcal S_{n,\beta}}(L)\).
+The exact finite-screen calculation in
+\eqref{scr:envelope} gives, for fixed even \(n\),
+\begin{equation}\label{arb:screen-input}
+ e_{n,\beta}(L)
+   =c_n\beta^{2d}L^{2d+1}
+       \bigl(1+O_n((\beta L)^2)\bigr),\qquad
+ d=n+1,\qquad c_n>0.
+\end{equation}
+Its error is not required to be uniform in \(n\).
+The finite form is bounded on \(L^2(-L,L)\), with exactly
+one negative eigenvalue. Consequently \(e_{n,\beta}(L)>0\),
+it is nondecreasing in \(L\), and its value is approached by
+unit compact smooth tests. In particular, for each fixed
+\(j\ge1\) and even \(n\),
+\begin{equation}\label{arb:radius-ratio}
+ \frac{e_{n,\beta}(j)}{e_{n,\beta}(2j)}
+       \longrightarrow2^{-(2d+1)},\qquad
+ e_{n,\beta}(j)\longrightarrow0
+       \quad(\beta\downarrow0).
+\end{equation}
+
+Put \(A_j=\max\{1,G(2j+2)\}\) and
+\(\delta_j=2^{-j}\). Choose an even integer \(n_j\ge2\),
+with \(d_j=n_j+1\), sufficiently large that
+\begin{equation}\label{arb:degree-choice}
+ 2^{-(2d_j+1)}<\frac{\delta_j}{32A_j}.
+\end{equation}
+This requires only that \(A_j\) be finite. Fixing \(n_j\)
+before decreasing \(\beta_j\), choose \(\beta_j>0\) so that,
+with \(e_j=e_{n_j,\beta_j}\),
+\begin{equation}\label{arb:displacement-choice}
+ \beta_j\le\min\{2^{-j},1/n_j\},\qquad
+ \frac{e_j(j)}{e_j(2j)}\le\frac{\delta_j}{16A_j},\qquad
+ e_j(j)\le\frac{\delta_j}{4}.
+\end{equation}
+Define the integer
+\begin{equation}\label{arb:multiplicity}
+ m_j=\left\lceil\frac{4A_j}{e_j(2j)}\right\rceil.
+\end{equation}
+The ceiling is controlled explicitly:
+\begin{equation}\label{arb:two-budgets}
+ \begin{split}
+ m_je_j(j)
+ &\le4A_j\frac{e_j(j)}{e_j(2j)}+e_j(j)
+   \le\frac{\delta_j}{2},\\
+ m_je_j(2j)&\ge4A_j.
+ \end{split}
+\end{equation}
+
+The displacement can also be chosen to ensure
+\begin{equation}\label{arb:weighted-choice}
+ m_j\beta_j^2\ge j.
+\end{equation}
+Indeed, when \(n_j\) is fixed, \eqref{arb:screen-input} gives
+\[
+ \frac{4A_j\beta^2}{e_{n_j,\beta}(2j)}
+ \sim\frac{4A_j}{c_{n_j}(2j)^{2d_j+1}}
+                    \beta^{2-2d_j}\longrightarrow\infty.
+\]
+Since \(d_j\ge3\), this is compatible with all the smallness
+requirements in \eqref{arb:displacement-choice}. The order here
+is important: impose all sufficiently-small-\(\beta_j\)
+requirements first, then define \(m_j\) by
+\eqref{arb:multiplicity}; \(m_j\) is not frozen while
+\(\beta_j\) is decreased.
+
+Set
+\begin{equation}\label{arb:finite-component}
+ D_j=m_j\mathcal S_{n_j,\beta_j},\qquad
+ W_j=m_j(128n_j+2).
+\end{equation}
+The real displacements and ordinate offsets of \(D_j\) are
+at most one in absolute value. Its total mass \(W_j\) is finite.
+By the smooth-test approximation for the finite screen, select
+\begin{equation}\label{arb:unmodulated-witness}
+ \phi_j\in C_c^\infty((-2j,2j);\mathbb C),\qquad
+ \|\phi_j\|_2=1,\qquad Q_{D_j}(\phi_j,\phi_j)<-2A_j.
+\end{equation}
+For each stage the screen, its multiplicity, and this smooth
+test are now fixed. No uniform derivative estimate for the
+sequence of tests is needed.
+
+\subsection{A symmetric induction controlling both directions of interference}
+
+For a finite reflected divisor \(D\), define
+\begin{equation}\label{arb:absolute-terms}
+ T_D(f)=\sum_{z\in D}\nu_D(z)
+                  |H_f(z)|\,|H_f(z^\#)|,
+ \qquad z^\#=-\overline z.
+\end{equation}
+Thus \(|Q_D(f,f)|\le T_D(f)\); this quantity controls
+individual absolute terms and does not rely on cancellation
+within a component. For a fixed compact smooth function \(h\),
+integration by parts yields, for every integer \(N\ge1\),
+\begin{equation}\label{arb:fourier-decay}
+ |H_h(\sigma+it)|\le C_{h,N}(1+|t|)^{-N}
+       \quad(|\sigma|\le1,\ t\in\mathbb R).
+\end{equation}
+For example, apply integration by parts to \(e^{\sigma u}h(u)\);
+its derivatives have uniformly bounded integrals for
+\(\sigma\in[-1,1]\), and the bounded \(t\)-range is controlled
+directly. It follows that, for fixed finite \(D\) in this strip,
+\begin{equation}\label{arb:decay-limits}
+ T_{D+i\Gamma}(h)\longrightarrow0\quad(|\Gamma|\to\infty),
+ \qquad
+ T_D(e^{-i\Gamma u}h)\longrightarrow0\quad(|\Gamma|\to\infty).
+\end{equation}
+These are finite sums with all multiplicities fixed before
+\(\Gamma\) tends to infinity.
+
+Take \(D_0=[1]+[-1]\). We recursively choose positive centers
+\(\gamma_j\) and put
+\begin{equation}\label{arb:symmetric-components}
+ C_j^+=D_j+i\gamma_j,\qquad
+ C_j^-=D_j-i\gamma_j,\qquad
+ E_j=C_j^+\sqcup C_j^-,\qquad
+ f_j(u)=e^{-i\gamma_j u}\phi_j(u).
+\end{equation}
+The notation \(\sqcup\) adds divisor multiplicities. Because
+\(D_j=\overline{D_j}\), conjugation exchanges the two
+components in \(E_j\). At stage \(j\), require
+\begin{equation}\label{arb:center-budgets}
+ \begin{gathered}
+ \gamma_1\ge10,\qquad
+ \gamma_j\ge\gamma_{j-1}+10\quad(j\ge2),\\
+ \gamma_j\ge1+2\sum_{i=1}^jW_i,\qquad
+ \log\gamma_j\ge W_j,
+ \end{gathered}
+\end{equation}
+as well as
+\begin{equation}\label{arb:new-on-old}
+ T_{E_j}(f_k)\le2^{-j-k-2}\quad(1\le k<j),
+\end{equation}
+and
+\begin{equation}\label{arb:old-on-new}
+ T_{D_0\sqcup E_1\sqcup\cdots\sqcup E_{j-1}}(f_j)
+                   +T_{C_j^-}(f_j)\le\frac14.
+\end{equation}
+
+All these requirements can be satisfied simultaneously.
+The counting conditions in \eqref{arb:center-budgets} impose
+only a finite lower threshold on \(\gamma_j\). Each term in
+\eqref{arb:new-on-old} tends to zero by the first limit in
+\eqref{arb:decay-limits}, applied to the two translated copies
+of the fixed \(D_j\) and each fixed old test. The first term
+of \eqref{arb:old-on-new} tends to zero by the second limit,
+with the old finite divisor fixed. The current opposite-height
+copy obeys the exact identity
+\begin{equation}\label{arb:opposite-height}
+ T_{C_j^-}(f_j)
+     =T_{D_j}(e^{-2i\gamma_j u}\phi_j)
+                   \longrightarrow0\quad(\gamma_j\to\infty).
+\end{equation}
+Thus this last interaction has frequency separation
+\(2\gamma_j\). There are only finitely many constraints at
+each stage, and \(f_j\) depends on the new center only through
+modulation of the already fixed \(\phi_j\). This proves the
+induction without a simultaneous infinite choice or a uniform
+bound on the smoothing constants.
+
+Define
+\begin{equation}\label{arb:divisor}
+ Z=D_0\sqcup\bigsqcup_{j\ge1}E_j.
+\end{equation}
+Every component is finite, its centers tend to infinity, and
+the enclosing bands \([\pm\gamma_j-1,\pm\gamma_j+1]\)
+are disjoint. Therefore \(Z\) is locally finite. All
+multiplicities are positive integers. Imaginary translation
+preserves reflection since
+\((z+i\gamma)^\#=z^\#+i\gamma\); conjugation exchanges
+the two bands of each \(E_j\). This proves all the
+symmetries in \eqref{arb:symmetry}. The strip condition follows
+from the displacement choices, and the base pair realizes
+\(s_Z=1\).
+
+\subsection{Counts, including partially entered bands}
+
+Fix \(Y\ge0\). If there is an index with
+\(\gamma_j-1\le Y\), let \(k\) be the largest such index.
+Every component contributing to \(N_0(Y)\) has index at most
+\(k\). Each of its two bands contributes at most its full
+mass \(W_j\), even if the interval has entered only part of
+the band. Consequently
+\begin{equation}\label{arb:origin-count}
+ N_0(Y)\le2+2\sum_{j=1}^kW_j
+       \le2+\gamma_k-1\le Y+2.
+\end{equation}
+If no such index exists, only the base pair can contribute,
+and the same bound holds. The use of the first edge
+\(\gamma_k-1\), rather than the center of a fully entered
+band, proves this at all endpoints as well.
+
+A closed interval \([t-1,t+1]\) can meet at most one of the
+signed enclosing bands, since their centers are separated by
+at least ten. It cannot meet both such a band and the base
+ordinate zero. If it meets a band of index \(j\), then
+\(|t|\ge\gamma_j-2\), so
+\begin{equation}\label{arb:local-count}
+ N_t(1)\le W_j\le\log\gamma_j\le\log(2+|t|).
+\end{equation}
+If it meets only the base ordinate, its count is at most two;
+otherwise its count is zero. This proves \eqref{arb:counts}
+with constants independent of \(G\). The factor two in the
+origin-count budget accounts for both conjugate bands; it is
+not needed in the local count, whose interval meets at most
+one band.
+
+\subsection{Absolute convergence and local semiboundedness}
+
+The origin count implies
+\begin{equation}\label{arb:inverse-ordinate-sum}
+ \sum_{z\in Z}\nu(z)(1+|\Im z|)^{-2}<\infty.
+\end{equation}
+Indeed the bounded central region is finite, and the part
+with \(2^q<|\Im z|\le2^{q+1}\) is bounded by a constant
+times \(2^{-q}\). For any fixed compact smooth \(f\),
+\eqref{arb:fourier-decay} bounds the absolute divisor summand
+by \(C_f\nu(z)(1+|\Im z|)^{-2}\). Hence the series for
+\(Q_Z(f,f)\) converges absolutely, and may be grouped by
+\eqref{arb:divisor}. The same reasoning applies to the
+sesquilinear form on two compact smooth tests.
+
+Fix a finite radius \(L>0\), and set
+\(K=\max\{1,\lceil L\rceil\}\). For \(j\ge K\), each
+of the two imaginary translations in \(E_j\) has negative
+envelope \(m_je_j(L)\). This follows from
+\[
+ H_{e^{i\gamma u}f}(z)=H_f(z+i\gamma),
+\]
+because modulation preserves the norm and support. Since
+\(L\le j\), monotonicity and \eqref{arb:two-budgets} imply
+\begin{equation}\label{arb:tail-lower}
+ Q_{E_j}(f,f)\ge-2m_je_j(L)\|f\|_2^2
+              \ge-\delta_j\|f\|_2^2
+ \quad\bigl(f\in C_c^\infty((-L,L))\bigr).
+\end{equation}
+Thus the doubled negative budget of all sufficiently late
+components is summable.
+
+The finitely many earlier components have finite negative
+envelopes. For the base pair, the even and odd features give
+\[
+ Q_{D_0}(f,f)=
+ 2|\langle f,\cosh u\rangle|^2
+ -2|\langle f,\sinh u\rangle|^2,
+\]
+whose negative envelope is
+\[
+ e_0(L)=2\|\sinh u\|_{L^2(-L,L)}^2
+                         =\sinh(2L)-2L.
+\]
+Summing the lower bounds for finite unions and then using the
+absolute convergence just established yields
+\begin{equation}\label{arb:finite-bottom}
+ Q_Z(f,f)\ge-B_L\|f\|_2^2,
+ \qquad
+ B_L=e_0(L)+2\sum_{j<K}m_je_j(L)+\sum_{j\ge K}2^{-j}<\infty.
+\end{equation}
+This proves the first assertion in \eqref{arb:conclusion}
+for every finite \(L\), including \(L<1\). No uniform
+convergence over the unit ball is required: the negative
+lower bounds are uniform and summable, while the original
+series converges absolutely separately on each smooth test.
+In particular, we do not assert that the full positive axis
+part is a bounded operator on \(L^2(-L,L)\), or that a
+closed realization of the full infinite form has been
+constructed.
+
+\subsection{Survival of the prescribed witnesses}
+
+On its designated positive-height component the unit smooth
+test \(f_j\) satisfies exactly
+\begin{equation}\label{arb:own-component}
+ Q_{C_j^+}(f_j,f_j)=Q_{D_j}(\phi_j,\phi_j)<-2A_j.
+\end{equation}
+All old components, the base pair, and the current
+negative-height partner together cost at most \(1/4\) in
+absolute value by \eqref{arb:old-on-new}. For each future
+stage \(k>j\), its constraint \eqref{arb:new-on-old} gives
+\(T_{E_k}(f_j)\le2^{-k-j-2}\). Therefore
+\begin{equation}\label{arb:future-tail}
+ \sum_{k>j}T_{E_k}(f_j)
+ \le\sum_{k>j}2^{-k-j-2}=2^{-2j-2}\le\frac1{16}.
+\end{equation}
+Using absolute convergence and \(A_j\ge1\), we obtain
+\begin{equation}\label{arb:surviving-witness}
+ Q_Z(f_j,f_j)<-2A_j+\frac14+\frac1{16}<-A_j.
+\end{equation}
+The test is supported strictly inside \((-2j,2j)\).
+For any \(L\ge2\), take \(j=\lfloor L/2\rfloor\ge1\).
+Then \(2j\le L<2j+2\), and the increasing test classes and
+monotonicity of \(G\) give
+\[
+ \cM_Z(L)\ge\cM_Z(2j)\ge A_j
+                  \ge G(2j+2)\ge G(L).
+\]
+This proves domination at every radius \(L\ge2\), not merely
+along a sparse sequence.
+
+We finish by checking the additional assertions. At height
+\(\gamma_j\), the positive-real target
+\(\beta_j+i\gamma_j\) has multiplicity \(m_j\), so its
+contribution to the sum in \eqref{arb:weighted-failure} is
+\(m_j\beta_j^2\ge j\). This proves that assertion.
+
+For real tests \(u,v\), conjugation symmetry of \(Z\) makes
+\(Q_Z(u,v)\) real. Together with Hermitian symmetry this gives
+\[
+ Q_Z(u+iv,u+iv)=Q_Z(u,u)+Q_Z(v,v),\qquad
+ \|u+iv\|_2^2=\|u\|_2^2+\|v\|_2^2.
+\]
+Thus a complex negative test has a nonzero real or imaginary
+part with at least its negative Rayleigh margin. Invariance
+under \(z\mapsto-z\) makes the form invariant under
+\(Rf(u)=f(-u)\); its even and odd real subspaces are
+orthogonal for both the form and the norm. Splitting the
+chosen real test into those two parts therefore preserves
+the margin in at least one nonzero part. Normalization gives
+a real, definite-parity unit witness, without changing its
+strict compact support.
+
+For instance, the choice \(G(L)=e^{L^2}\) produces a divisor
+satisfying \eqref{arb:symmetry}--\eqref{arb:counts}, with a
+finite bottom in every finite window, but
+\[
+ \lim_{L\to\infty}\frac{\log\cM_Z(L)}{L}=+\infty.
+\]
+Hence local semiboundedness and these fixed count bounds do
+not imply a finite exponential growth rate, even with full
+reflection and conjugation symmetry. The examples use
+multiplicities and are abstract divisors. No simple-divisor
+assertion, arithmetic realization, Euler product, or
+Riemann--von Mangoldt asymptotic is imposed.

@@ -1,0 +1,100 @@
+\section{The arithmetic interface}
+\label{sec:arithmetic}
+
+The preceding results separate information about a reflected
+divisor from information about an arithmetic formula. For
+clarity, we end by writing that interface in exactly the
+normalization used in this article.
+
+Let \(Z_\zeta=\{\rho-\tfrac12\}\), where \(\rho\) runs over
+the nontrivial zeros of the Riemann zeta function, with
+multiplicity. The functional equation supplies reflection,
+and the classical ordinate count is polynomial. For
+\(f\in C_c^\infty(-L,L)\), write
+\[
+ F_f(t)=H_f(it)=\int_\R f(u)e^{itu}\,du,\qquad
+ C_f(v)=\int_\R f(u)\overline{f(u-v)}\,du.
+\]
+Thus \(C_f(-v)=\overline{C_f(v)}\) and
+\(C_f(0)=\|f\|_2^2\). The Guinand--Weil explicit formula,
+in additive coordinates, is
+\begin{equation}\label{arith:actual-form}
+ \begin{split}
+ Q_{Z_\zeta}(f,f)
+ ={}&\frac1{2\pi}\int_\R
+  \left\{\Re\psi\left(\frac14+\frac{it}2\right)-\log\pi\right\}
+                     |F_f(t)|^2\,dt\\
+ &+2\Re\left\{H_f(1/2)\overline{H_f(-1/2)}\right\}\\
+ &-2\Re\sum_{n\ge2}\frac{\Lambda(n)}{\sqrt n}\,C_f(\log n).
+ \end{split}
+\end{equation}
+Here \(\psi=\Gamma'/\Gamma\), and \(\Lambda(n)\) equals
+\(\log p\) if \(n\) is a positive power of a prime \(p\)
+and equals zero otherwise. See
+\cite[Sections 2--4]{Bombieri} for the explicit formula
+and its associated quadratic functional. Our formula follows
+by applying it to \(f*\widetilde f\), where
+\(\widetilde f(u)=\overline{f(-u)}\): its transform is
+\(H_f(z)\overline{H_f(-\overline z)}\), exactly the
+product in \eqref{eq:form}. The Fourier convention accounts
+for the factor \(1/(2\pi)\).
+
+Every term in \eqref{arith:actual-form} is well defined on
+the stated class. The prime sum is finite because
+\(C_f(v)=0\) for \(|v|\ge2L\). The Fourier transform decreases
+rapidly, while the real gamma multiplier grows like
+\(\log|t|\) and is bounded below. The second line is a
+polar contribution, not a nonnegative form. In particular,
+for a real odd \(f\) it equals \(-2|H_f(1/2)|^2\).
+Deleting that line or replacing it by a positive quantity
+would change the arithmetic problem.
+
+Here is the exact implication supplied by the abstract
+lower-growth result. Suppose that, for one fixed
+\(0\le\kappa<1\) and every \(\varepsilon>0\), an independent
+arithmetic argument proves
+\begin{equation}\label{arith:open-bound}
+ \cM_{Z_\zeta}(L)\le
+ C_\varepsilon e^{(\kappa+\varepsilon)L}
+ \qquad(L\ge1).
+\end{equation}
+If there is an off-axis zero, the lower rate in
+Section~\ref{sec:growth} gives
+\[
+ 2\sup_\rho\left|\Re\rho-\tfrac12\right|
+ \le\liminf_{L\to\infty}\frac{\log\cM_{Z_\zeta}(L)}L
+ \le\kappa.
+\]
+If there is no off-axis zero, the same zero-location
+conclusion is immediate. Hence
+\begin{equation}\label{arith:strip}
+ \left|\Re\rho-\tfrac12\right|\le\kappa/2
+ \quad\hbox{for every nontrivial zero } \rho.
+\end{equation}
+In particular, subexponential negative growth would imply
+the Riemann Hypothesis. The weighted sufficient condition
+of Section~\ref{sec:growth} is not needed for this
+implication; only the count-based lower rate is used.
+
+The hypothesis \eqref{arith:open-bound} is not proved in
+this article. The signed prime sum, the gamma term, and
+the polar contribution would have to be controlled
+together, uniformly over every admissible test in the
+window. Counting bounds for a divisor and positivity of
+one finite compression do not provide that estimate.
+Conversely, the arbitrary-growth divisors of
+Section~\ref{sec:arbitrary-growth} are not asserted to be
+zero sets of arithmetic \(L\)-functions and do not refute
+an arithmetic inequality.
+
+Several questions remain on the abstract side as well.
+The constants in the support--margin law are not uniform
+in a growing count budget; the exact leading minimax
+constant is undetermined. The weighted local bound is a
+sufficient condition for the matching upper rate; it is
+not asserted to be necessary. A characterization of growth that
+retains the compensation supplied by the axis part
+would be stronger than either a pure counting bound
+or an absolute estimate of the off-axis contribution.
+These are distinct questions from proving
+\eqref{arith:open-bound}.
